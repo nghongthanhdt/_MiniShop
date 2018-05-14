@@ -42,14 +42,6 @@
     <Property Name="TenLoaiPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaLoa__24927208" FromRole="LoaiPhieu" ToRole="PhieuXuatNhap" />
   </EntityType>
-  <EntityType Name="LoaiSanPham">
-    <Key>
-      <PropertyRef Name="MaLoaiSanPham" />
-    </Key>
-    <Property Name="MaLoaiSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenLoaiSanPham" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="SanPham" Relationship="Self.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="LoaiSanPham" ToRole="SanPham" />
-  </EntityType>
   <EntityType Name="PhieuXuatNhap">
     <Key>
       <PropertyRef Name="MaPhieuXuatNhap" />
@@ -88,9 +80,9 @@
     <Property Name="DonViTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoLuongToiThieu" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="SoLuongBaoDong" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="SanPham" ToRole="LoaiSanPham" />
     <NavigationProperty Name="PhieuXuatNhapChiTiet" Relationship="Self.FK__PhieuXuat__MaSan__20C1E124" FromRole="SanPham" ToRole="PhieuXuatNhapChiTiet" />
     <NavigationProperty Name="XuatNhapTonNgay" Relationship="Self.FK__XuatNhapT__MaSan__21B6055D" FromRole="SanPham" ToRole="XuatNhapTonNgay" />
+    <NavigationProperty Name="LoaiSanPham" Relationship="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="SanPham" ToRole="LoaiSanPham" />
   </EntityType>
   <EntityType Name="XuatNhapTonNgay">
     <Key>
@@ -155,18 +147,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__MaLoaiS__1FCDBCEB">
-    <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="LoaiSanPham">
-        <PropertyRef Name="MaLoaiSanPham" />
-      </Principal>
-      <Dependent Role="SanPham">
-        <PropertyRef Name="MaLoaiSanPham" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__PhieuXuat__MaPhi__239E4DCF">
     <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="1" />
     <End Role="PhieuXuatNhapChiTiet" Type="Self.PhieuXuatNhapChiTiet" Multiplicity="*" />
@@ -209,7 +189,6 @@
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" />
     <EntitySet Name="Kho" EntityType="Self.Kho" />
     <EntitySet Name="LoaiPhieu" EntityType="Self.LoaiPhieu" />
-    <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" />
     <EntitySet Name="PhieuXuatNhap" EntityType="Self.PhieuXuatNhap" />
     <EntitySet Name="PhieuXuatNhapChiTiet" EntityType="Self.PhieuXuatNhapChiTiet" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" />
@@ -230,10 +209,6 @@
       <End Role="LoaiPhieu" EntitySet="LoaiPhieu" />
       <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaLoaiS__1FCDBCEB" Association="Self.FK__SanPham__MaLoaiS__1FCDBCEB">
-      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
-      <End Role="SanPham" EntitySet="SanPham" />
-    </AssociationSet>
     <AssociationSet Name="FK__PhieuXuat__MaPhi__239E4DCF" Association="Self.FK__PhieuXuat__MaPhi__239E4DCF">
       <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
       <End Role="PhieuXuatNhapChiTiet" EntitySet="PhieuXuatNhapChiTiet" />
@@ -246,5 +221,31 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="XuatNhapTonNgay" EntitySet="XuatNhapTonNgay" />
     </AssociationSet>
+    <EntitySet Name="LoaiSanPham" EntityType="TH.MiniShop.Models.LoaiSanPham" />
+    <AssociationSet Name="FK__SanPham__MaLoaiS__1FCDBCEB" Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="MaLoaiSanPham" />
+    </Key>
+    <Property Name="MaLoaiSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiSanPham" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="KyHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPham" Relationship="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="LoaiSanPham" ToRole="SanPham" />
+  </EntityType>
+  <Association Name="FK__SanPham__MaLoaiS__1FCDBCEB">
+    <End Type="TH.MiniShop.Models.LoaiSanPham" Role="LoaiSanPham" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.SanPham" Role="SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPham">
+        <PropertyRef Name="MaLoaiSanPham" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaLoaiSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

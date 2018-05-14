@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="TH.MiniShop.Models.KhachHang" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.Kho" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiPhieu" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiSanPham" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.PhieuXuatNhap" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.PhieuXuatNhapChiTiet" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.SanPham" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
@@ -19,10 +18,11 @@
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaKha__22AA2996" ManuallyRouted="false" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208" ManuallyRouted="false" />
-        <AssociationConnector Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" ManuallyRouted="false" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaPhi__239E4DCF" ManuallyRouted="false" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" ManuallyRouted="false" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiSanPham" Width="1.5" PointX="0.75" PointY="13.875" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

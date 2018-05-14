@@ -22,6 +22,7 @@ namespace TH.MiniShop.Models
     
         public int MaLoaiSanPham { get; set; }
         public string TenLoaiSanPham { get; set; }
+        public string KyHieu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SanPham> SanPham { get; set; }

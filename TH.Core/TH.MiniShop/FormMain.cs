@@ -20,8 +20,8 @@ namespace TH.MiniShop
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ThMessageBox.Show("hihi");
-
+            ThMessageBox.Show(TH.Core.Controllers.StringController.ToLeft2CharID("Đường",33330));
+            
         }
     }
 }

@@ -44,6 +44,7 @@
     </Key>
     <Property Name="MaLoaiSanPham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoaiSanPham" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="KyHieu" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PhieuXuatNhap">
     <Key>

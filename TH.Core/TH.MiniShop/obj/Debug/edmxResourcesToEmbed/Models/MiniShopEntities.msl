@@ -44,14 +44,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LoaiSanPham">
-      <EntityTypeMapping TypeName="TH.MiniShop.Models.LoaiSanPham">
-        <MappingFragment StoreEntitySet="LoaiSanPham">
-          <ScalarProperty Name="MaLoaiSanPham" ColumnName="MaLoaiSanPham" />
-          <ScalarProperty Name="TenLoaiSanPham" ColumnName="TenLoaiSanPham" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PhieuXuatNhap">
       <EntityTypeMapping TypeName="TH.MiniShop.Models.PhieuXuatNhap">
         <MappingFragment StoreEntitySet="PhieuXuatNhap">
@@ -99,6 +91,15 @@
           <ScalarProperty Name="XuatTrongNgay" ColumnName="XuatTrongNgay" />
           <ScalarProperty Name="TonCuoiNgay" ColumnName="TonCuoiNgay" />
           <ScalarProperty Name="TonToiThieu" ColumnName="TonToiThieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPham">
+      <EntityTypeMapping TypeName="TH.MiniShop.Models.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPham">
+          <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+          <ScalarProperty Name="TenLoaiSanPham" ColumnName="TenLoaiSanPham" />
+          <ScalarProperty Name="MaLoaiSanPham" ColumnName="MaLoaiSanPham" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
