@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96de6aaacb6d438b8ac4d5b9f821bf9c" Name="Diagram1">
+        <EntityTypeShape EntityType="TH.MiniShop.Models.DonViTinh" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.HinhThucNhapXuat" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.KhachHang" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.Kho" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiPhieu" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiSanPham" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.PhieuXuatNhap" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.PhieuXuatNhapChiTiet" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.SanPham" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.XuatNhapTonNgay" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaHin__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaKha__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaPhi__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
