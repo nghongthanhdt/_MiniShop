@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.Core", "TH.Core\TH.Core.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.MiniShop", "TH.MiniShop\TH.MiniShop.csproj", "{9F5500F1-E9FC-4C4D-B5AF-0F339D24CBDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.InSTTVLTL", "TH.InSTTVLTL\TH.InSTTVLTL.csproj", "{55757DC6-3459-49A4-B60D-07E867E7E3AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9F5500F1-E9FC-4C4D-B5AF-0F339D24CBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5500F1-E9FC-4C4D-B5AF-0F339D24CBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5500F1-E9FC-4C4D-B5AF-0F339D24CBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
