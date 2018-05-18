@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InSTTVLTLModelStoreContainer" CdmEntityContainer="InSTTVLTLEntities">
+    <EntitySetMapping Name="ThamSo">
+      <EntityTypeMapping TypeName="InSTTVLTLModel.ThamSo">
+        <MappingFragment StoreEntitySet="ThamSo">
+          <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLTL">
+      <EntityTypeMapping TypeName="InSTTVLTLModel.VLTL">
+        <MappingFragment StoreEntitySet="VLTL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="TenVLTL" ColumnName="TenVLTL" />
+          <ScalarProperty Name="SoHienTai" ColumnName="SoHienTai" />
+          <ScalarProperty Name="NgayIn" ColumnName="NgayIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

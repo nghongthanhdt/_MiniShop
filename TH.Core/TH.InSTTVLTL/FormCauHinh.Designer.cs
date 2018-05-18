@@ -33,6 +33,9 @@
             this.txtTenBenhVien = new System.Windows.Forms.TextBox();
             this.gcVLTL = new DevExpress.XtraGrid.GridControl();
             this.gvVLTL = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenVLTL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenVLTL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +44,8 @@
             this.btnLuuCauHinh = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuuVLTL = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenVLTL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             this.txtTenBenhVien.Name = "txtTenBenhVien";
             this.txtTenBenhVien.Size = new System.Drawing.Size(316, 20);
             this.txtTenBenhVien.TabIndex = 1;
+            this.txtTenBenhVien.TabStop = false;
             // 
             // gcVLTL
             // 
@@ -71,9 +73,10 @@
             this.gcVLTL.MainView = this.gvVLTL;
             this.gcVLTL.Name = "gcVLTL";
             this.gcVLTL.Size = new System.Drawing.Size(493, 200);
-            this.gcVLTL.TabIndex = 2;
+            this.gcVLTL.TabIndex = 99;
             this.gcVLTL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVLTL});
+            this.gcVLTL.Click += new System.EventHandler(this.gcVLTL_Click);
             // 
             // gvVLTL
             // 
@@ -87,6 +90,30 @@
             this.gvVLTL.OptionsBehavior.ReadOnly = true;
             this.gvVLTL.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gvVLTL.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colSTT
+            // 
+            this.colSTT.Caption = "STT";
+            this.colSTT.FieldName = "STT";
+            this.colSTT.Name = "colSTT";
+            this.colSTT.Visible = true;
+            this.colSTT.VisibleIndex = 0;
+            this.colSTT.Width = 89;
+            // 
+            // colTenVLTL
+            // 
+            this.colTenVLTL.Caption = "TênVLTL";
+            this.colTenVLTL.FieldName = "TenVLTL";
+            this.colTenVLTL.Name = "colTenVLTL";
+            this.colTenVLTL.Visible = true;
+            this.colTenVLTL.VisibleIndex = 1;
+            this.colTenVLTL.Width = 607;
             // 
             // label2
             // 
@@ -118,7 +145,7 @@
             this.txtSTT.Location = new System.Drawing.Point(77, 277);
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(86, 20);
-            this.txtSTT.TabIndex = 1;
+            this.txtSTT.TabIndex = 2;
             // 
             // btnThemMoi
             // 
@@ -126,7 +153,7 @@
             this.btnThemMoi.Location = new System.Drawing.Point(169, 275);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(71, 23);
-            this.btnThemMoi.TabIndex = 3;
+            this.btnThemMoi.TabIndex = 4;
             this.btnThemMoi.Text = "Mới";
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
@@ -137,9 +164,10 @@
             this.btnLuuCauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuCauHinh.Image")));
             this.btnLuuCauHinh.Location = new System.Drawing.Point(16, 313);
             this.btnLuuCauHinh.Name = "btnLuuCauHinh";
-            this.btnLuuCauHinh.Size = new System.Drawing.Size(493, 36);
-            this.btnLuuCauHinh.TabIndex = 4;
+            this.btnLuuCauHinh.Size = new System.Drawing.Size(192, 36);
+            this.btnLuuCauHinh.TabIndex = 6;
             this.btnLuuCauHinh.Text = "Lưu cấu hình";
+            this.btnLuuCauHinh.Click += new System.EventHandler(this.btnLuuCauHinh_Click);
             // 
             // btnLuuVLTL
             // 
@@ -157,29 +185,9 @@
             this.btnXoa.Location = new System.Drawing.Point(362, 274);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 23);
-            this.btnXoa.TabIndex = 3;
+            this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
-            // 
-            // colID
-            // 
-            this.colID.Caption = "ID";
-            this.colID.Name = "colID";
-            // 
-            // colSTT
-            // 
-            this.colSTT.Caption = "STT";
-            this.colSTT.Name = "colSTT";
-            this.colSTT.Visible = true;
-            this.colSTT.VisibleIndex = 0;
-            this.colSTT.Width = 89;
-            // 
-            // colTenVLTL
-            // 
-            this.colTenVLTL.Caption = "TênVLTL";
-            this.colTenVLTL.Name = "colTenVLTL";
-            this.colTenVLTL.Visible = true;
-            this.colTenVLTL.VisibleIndex = 1;
-            this.colTenVLTL.Width = 607;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtID
             // 
@@ -187,6 +195,17 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(65, 20);
             this.txtID.TabIndex = 5;
+            this.txtID.TabStop = false;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
+            this.btnDong.Location = new System.Drawing.Point(214, 313);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(295, 36);
+            this.btnDong.TabIndex = 7;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // FormCauHinh
             // 
@@ -194,6 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 371);
             this.Controls.Add(this.txtID);
+            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuuCauHinh);
             this.Controls.Add(this.btnLuuVLTL);
             this.Controls.Add(this.btnXoa);
@@ -206,7 +226,8 @@
             this.Controls.Add(this.txtTenBenhVien);
             this.Controls.Add(this.label1);
             this.Name = "FormCauHinh";
-            this.Text = "FormCauHinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cấu hình phần mềm";
             this.Load += new System.EventHandler(this.FormCauHinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).EndInit();
@@ -233,5 +254,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenVLTL;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private System.Windows.Forms.TextBox txtID;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
     }
 }

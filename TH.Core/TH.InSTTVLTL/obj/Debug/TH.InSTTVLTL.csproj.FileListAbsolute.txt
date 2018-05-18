@@ -89,3 +89,10 @@ D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\ja\DevExpress.Office.v16.1.
 D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\obj\Debug\TH.InSTTVLTL.FormCauHinh.resources
 D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\obj\Debug\TH.InSTTVLTL.exe.licenses
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\TH.InSTTVLTL.exe.config
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\EntityFramework.dll
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\EntityFramework.SqlServer.dll
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\EntityFramework.xml
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\EntityFramework.SqlServer.xml
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\TH.Core.exe
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\TH.Core.pdb
