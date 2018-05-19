@@ -99,3 +99,6 @@ D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormLoaiSanPham.
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\bin\Debug\TH.MiniShop.exe.config
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.exe
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.pdb
+D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormSanPham.resources
+D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormNhapXuat.resources
+D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormQuanLyNhapXuat.resources

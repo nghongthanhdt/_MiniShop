@@ -34,5 +34,50 @@ namespace TH.MiniShop
             newForm.MdiParent = this;
             newForm.Show();                   
         }
+
+        private void menuSanPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FormSanPham))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            Form newForm = new FormSanPham();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
+
+        private void menuNhapXuatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FormNhapXuat))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            Form newForm = new FormNhapXuat();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
+
+        private void menuQuanLyNhapXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FormQuanLyNhapXuat))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            Form newForm = new FormQuanLyNhapXuat();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
     }
 }

@@ -1,47 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TH.MiniShop.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="DonViTinh">
-    <Key>
-      <PropertyRef Name="MaDonViTinh" />
-    </Key>
-    <Property Name="MaDonViTinh" Type="Int32" Nullable="false" />
-    <Property Name="TenDonViTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="HinhThucNhapXuat">
-    <Key>
-      <PropertyRef Name="MaHinhThuc" />
-    </Key>
-    <Property Name="MaHinhThuc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenHinhThuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaHin__25869641" FromRole="HinhThucNhapXuat" ToRole="PhieuXuatNhap" />
-  </EntityType>
-  <EntityType Name="KhachHang">
-    <Key>
-      <PropertyRef Name="MaKhachHang" />
-    </Key>
-    <Property Name="MaKhachHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenKhachHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="LaKhachHang" Type="Boolean" Nullable="false" />
-    <Property Name="LaNhaCungCap" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaKha__22AA2996" FromRole="KhachHang" ToRole="PhieuXuatNhap" />
-  </EntityType>
-  <EntityType Name="Kho">
-    <Key>
-      <PropertyRef Name="MaKho" />
-    </Key>
-    <Property Name="MaKho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenKho" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Xoa" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaKho__300424B4" FromRole="Kho" ToRole="PhieuXuatNhap" />
-  </EntityType>
-  <EntityType Name="LoaiPhieu">
-    <Key>
-      <PropertyRef Name="MaLoaiPhieu" />
-    </Key>
-    <Property Name="MaLoaiPhieu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenLoaiPhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaLoa__24927208" FromRole="LoaiPhieu" ToRole="PhieuXuatNhap" />
-  </EntityType>
   <EntityType Name="PhieuXuatNhap">
     <Key>
       <PropertyRef Name="MaPhieuXuatNhap" />
@@ -54,11 +12,11 @@
     <Property Name="NgayLapPhieu" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="NgayXuatNhap" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="MaKho" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="HinhThucNhapXuat" Relationship="Self.FK__PhieuXuat__MaHin__25869641" FromRole="PhieuXuatNhap" ToRole="HinhThucNhapXuat" />
-    <NavigationProperty Name="KhachHang" Relationship="Self.FK__PhieuXuat__MaKha__22AA2996" FromRole="PhieuXuatNhap" ToRole="KhachHang" />
-    <NavigationProperty Name="Kho" Relationship="Self.FK__PhieuXuat__MaKho__300424B4" FromRole="PhieuXuatNhap" ToRole="Kho" />
-    <NavigationProperty Name="LoaiPhieu" Relationship="Self.FK__PhieuXuat__MaLoa__24927208" FromRole="PhieuXuatNhap" ToRole="LoaiPhieu" />
     <NavigationProperty Name="PhieuXuatNhapChiTiet" Relationship="Self.FK__PhieuXuat__MaPhi__239E4DCF" FromRole="PhieuXuatNhap" ToRole="PhieuXuatNhapChiTiet" />
+    <NavigationProperty Name="HinhThucNhapXuat" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaHin__25869641" FromRole="PhieuXuatNhap" ToRole="HinhThucNhapXuat" />
+    <NavigationProperty Name="Kho" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4" FromRole="PhieuXuatNhap" ToRole="Kho" />
+    <NavigationProperty Name="LoaiPhieu" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208" FromRole="PhieuXuatNhap" ToRole="LoaiPhieu" />
+    <NavigationProperty Name="KhachHang" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaKha__22AA2996" FromRole="PhieuXuatNhap" ToRole="KhachHang" />
   </EntityType>
   <EntityType Name="PhieuXuatNhapChiTiet">
     <Key>
@@ -68,21 +26,7 @@
     <Property Name="MaPhieuXuatNhap" Type="Int32" Nullable="false" />
     <Property Name="MaSanPham" Type="Int32" Nullable="false" />
     <NavigationProperty Name="PhieuXuatNhap" Relationship="Self.FK__PhieuXuat__MaPhi__239E4DCF" FromRole="PhieuXuatNhapChiTiet" ToRole="PhieuXuatNhap" />
-    <NavigationProperty Name="SanPham" Relationship="Self.FK__PhieuXuat__MaSan__20C1E124" FromRole="PhieuXuatNhapChiTiet" ToRole="SanPham" />
-  </EntityType>
-  <EntityType Name="SanPham">
-    <Key>
-      <PropertyRef Name="MaSanPham" />
-    </Key>
-    <Property Name="MaSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MaLoaiSanPham" Type="Int32" Nullable="false" />
-    <Property Name="TenSanPham" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DonViTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SoLuongToiThieu" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="SoLuongBaoDong" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <NavigationProperty Name="PhieuXuatNhapChiTiet" Relationship="Self.FK__PhieuXuat__MaSan__20C1E124" FromRole="SanPham" ToRole="PhieuXuatNhapChiTiet" />
-    <NavigationProperty Name="XuatNhapTonNgay" Relationship="Self.FK__XuatNhapT__MaSan__21B6055D" FromRole="SanPham" ToRole="XuatNhapTonNgay" />
-    <NavigationProperty Name="LoaiSanPham" Relationship="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="SanPham" ToRole="LoaiSanPham" />
+    <NavigationProperty Name="SanPham" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" FromRole="PhieuXuatNhapChiTiet" ToRole="SanPham" />
   </EntityType>
   <EntityType Name="XuatNhapTonNgay">
     <Key>
@@ -97,56 +41,8 @@
     <Property Name="XuatTrongNgay" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="TonCuoiNgay" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="TonToiThieu" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <NavigationProperty Name="SanPham" Relationship="Self.FK__XuatNhapT__MaSan__21B6055D" FromRole="XuatNhapTonNgay" ToRole="SanPham" />
+    <NavigationProperty Name="SanPham" Relationship="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" FromRole="XuatNhapTonNgay" ToRole="SanPham" />
   </EntityType>
-  <Association Name="FK__PhieuXuat__MaHin__25869641">
-    <End Role="HinhThucNhapXuat" Type="Self.HinhThucNhapXuat" Multiplicity="1" />
-    <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HinhThucNhapXuat">
-        <PropertyRef Name="MaHinhThuc" />
-      </Principal>
-      <Dependent Role="PhieuXuatNhap">
-        <PropertyRef Name="MaHinhThuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PhieuXuat__MaKha__22AA2996">
-    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-    <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KhachHang">
-        <PropertyRef Name="MaKhachHang" />
-      </Principal>
-      <Dependent Role="PhieuXuatNhap">
-        <PropertyRef Name="MaKhachHang" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PhieuXuat__MaKho__300424B4">
-    <End Role="Kho" Type="Self.Kho" Multiplicity="1" />
-    <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kho">
-        <PropertyRef Name="MaKho" />
-      </Principal>
-      <Dependent Role="PhieuXuatNhap">
-        <PropertyRef Name="MaKho" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PhieuXuat__MaLoa__24927208">
-    <End Role="LoaiPhieu" Type="Self.LoaiPhieu" Multiplicity="1" />
-    <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="LoaiPhieu">
-        <PropertyRef Name="MaLoaiPhieu" />
-      </Principal>
-      <Dependent Role="PhieuXuatNhap">
-        <PropertyRef Name="MaLoaiPhieu" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__PhieuXuat__MaPhi__239E4DCF">
     <End Role="PhieuXuatNhap" Type="Self.PhieuXuatNhap" Multiplicity="1" />
     <End Role="PhieuXuatNhapChiTiet" Type="Self.PhieuXuatNhapChiTiet" Multiplicity="*" />
@@ -159,9 +55,68 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="MiniShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PhieuXuatNhap" EntityType="Self.PhieuXuatNhap" />
+    <EntitySet Name="PhieuXuatNhapChiTiet" EntityType="Self.PhieuXuatNhapChiTiet" />
+    <EntitySet Name="XuatNhapTonNgay" EntityType="Self.XuatNhapTonNgay" />
+    <AssociationSet Name="FK__PhieuXuat__MaPhi__239E4DCF" Association="Self.FK__PhieuXuat__MaPhi__239E4DCF">
+      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
+      <End Role="PhieuXuatNhapChiTiet" EntitySet="PhieuXuatNhapChiTiet" />
+    </AssociationSet>
+    <EntitySet Name="SanPham" EntityType="TH.MiniShop.Models.SanPham" />
+    <AssociationSet Name="FK__PhieuXuat__MaSan__20C1E124" Association="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="PhieuXuatNhapChiTiet" EntitySet="PhieuXuatNhapChiTiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__XuatNhapT__MaSan__21B6055D" Association="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="XuatNhapTonNgay" EntitySet="XuatNhapTonNgay" />
+    </AssociationSet>
+    <EntitySet Name="DonViTinh" EntityType="TH.MiniShop.Models.DonViTinh" />
+    <EntitySet Name="LoaiSanPham" EntityType="TH.MiniShop.Models.LoaiSanPham" />
+    <AssociationSet Name="FK__SanPham__MaLoaiS__1FCDBCEB" Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <EntitySet Name="HinhThucNhapXuat" EntityType="TH.MiniShop.Models.HinhThucNhapXuat" />
+    <EntitySet Name="Kho" EntityType="TH.MiniShop.Models.Kho" />
+    <EntitySet Name="LoaiPhieu" EntityType="TH.MiniShop.Models.LoaiPhieu" />
+    <AssociationSet Name="FK__PhieuXuat__MaHin__25869641" Association="TH.MiniShop.Models.FK__PhieuXuat__MaHin__25869641">
+      <End Role="HinhThucNhapXuat" EntitySet="HinhThucNhapXuat" />
+      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuat__MaKho__300424B4" Association="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4">
+      <End Role="Kho" EntitySet="Kho" />
+      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuXuat__MaLoa__24927208" Association="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208">
+      <End Role="LoaiPhieu" EntitySet="LoaiPhieu" />
+      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
+    </AssociationSet>
+    <EntitySet Name="KhachHang" EntityType="TH.MiniShop.Models.KhachHang" />
+    <AssociationSet Name="FK__PhieuXuat__MaKha__22AA2996" Association="TH.MiniShop.Models.FK__PhieuXuat__MaKha__22AA2996">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSanPham" />
+    </Key>
+    <Property Name="MaSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaLoaiSanPham" Type="Int32" Nullable="false" />
+    <Property Name="TenSanPham" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DonViTinh" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongToiThieu" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SoLuongBaoDong" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="KyHieu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhieuXuatNhapChiTiet" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" FromRole="SanPham" ToRole="PhieuXuatNhapChiTiet" />
+    <NavigationProperty Name="XuatNhapTonNgay" Relationship="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" FromRole="SanPham" ToRole="XuatNhapTonNgay" />
+    <NavigationProperty Name="LoaiSanPham" Relationship="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="SanPham" ToRole="LoaiSanPham" />
+  </EntityType>
   <Association Name="FK__PhieuXuat__MaSan__20C1E124">
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-    <End Role="PhieuXuatNhapChiTiet" Type="Self.PhieuXuatNhapChiTiet" Multiplicity="*" />
+    <End Type="TH.MiniShop.Models.SanPham" Role="SanPham" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.PhieuXuatNhapChiTiet" Role="PhieuXuatNhapChiTiet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SanPham">
         <PropertyRef Name="MaSanPham" />
@@ -172,8 +127,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__XuatNhapT__MaSan__21B6055D">
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-    <End Role="XuatNhapTonNgay" Type="Self.XuatNhapTonNgay" Multiplicity="*" />
+    <End Type="TH.MiniShop.Models.SanPham" Role="SanPham" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.XuatNhapTonNgay" Role="XuatNhapTonNgay" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SanPham">
         <PropertyRef Name="MaSanPham" />
@@ -183,57 +138,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MiniShopEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="DonViTinh" EntityType="Self.DonViTinh" />
-    <EntitySet Name="HinhThucNhapXuat" EntityType="Self.HinhThucNhapXuat" />
-    <EntitySet Name="KhachHang" EntityType="Self.KhachHang" />
-    <EntitySet Name="Kho" EntityType="Self.Kho" />
-    <EntitySet Name="LoaiPhieu" EntityType="Self.LoaiPhieu" />
-    <EntitySet Name="PhieuXuatNhap" EntityType="Self.PhieuXuatNhap" />
-    <EntitySet Name="PhieuXuatNhapChiTiet" EntityType="Self.PhieuXuatNhapChiTiet" />
-    <EntitySet Name="SanPham" EntityType="Self.SanPham" />
-    <EntitySet Name="XuatNhapTonNgay" EntityType="Self.XuatNhapTonNgay" />
-    <AssociationSet Name="FK__PhieuXuat__MaHin__25869641" Association="Self.FK__PhieuXuat__MaHin__25869641">
-      <End Role="HinhThucNhapXuat" EntitySet="HinhThucNhapXuat" />
-      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaKha__22AA2996" Association="Self.FK__PhieuXuat__MaKha__22AA2996">
-      <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaKho__300424B4" Association="Self.FK__PhieuXuat__MaKho__300424B4">
-      <End Role="Kho" EntitySet="Kho" />
-      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaLoa__24927208" Association="Self.FK__PhieuXuat__MaLoa__24927208">
-      <End Role="LoaiPhieu" EntitySet="LoaiPhieu" />
-      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaPhi__239E4DCF" Association="Self.FK__PhieuXuat__MaPhi__239E4DCF">
-      <End Role="PhieuXuatNhap" EntitySet="PhieuXuatNhap" />
-      <End Role="PhieuXuatNhapChiTiet" EntitySet="PhieuXuatNhapChiTiet" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PhieuXuat__MaSan__20C1E124" Association="Self.FK__PhieuXuat__MaSan__20C1E124">
-      <End Role="SanPham" EntitySet="SanPham" />
-      <End Role="PhieuXuatNhapChiTiet" EntitySet="PhieuXuatNhapChiTiet" />
-    </AssociationSet>
-    <AssociationSet Name="FK__XuatNhapT__MaSan__21B6055D" Association="Self.FK__XuatNhapT__MaSan__21B6055D">
-      <End Role="SanPham" EntitySet="SanPham" />
-      <End Role="XuatNhapTonNgay" EntitySet="XuatNhapTonNgay" />
-    </AssociationSet>
-    <EntitySet Name="LoaiSanPham" EntityType="TH.MiniShop.Models.LoaiSanPham" />
-    <AssociationSet Name="FK__SanPham__MaLoaiS__1FCDBCEB" Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB">
-      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
-      <End Role="SanPham" EntitySet="SanPham" />
-    </AssociationSet>
-  </EntityContainer>
+  <EntityType Name="DonViTinh">
+    <Key>
+      <PropertyRef Name="MaDonViTinh" />
+    </Key>
+    <Property Name="MaDonViTinh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDonViTinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="LoaiSanPham">
     <Key>
       <PropertyRef Name="MaLoaiSanPham" />
     </Key>
     <Property Name="MaLoaiSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoaiSanPham" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="KyHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KyHieu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SanPham" Relationship="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" FromRole="LoaiSanPham" ToRole="SanPham" />
   </EntityType>
   <Association Name="FK__SanPham__MaLoaiS__1FCDBCEB">
@@ -245,6 +163,93 @@
       </Principal>
       <Dependent Role="SanPham">
         <PropertyRef Name="MaLoaiSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HinhThucNhapXuat">
+    <Key>
+      <PropertyRef Name="MaHinhThuc" />
+    </Key>
+    <Property Name="MaHinhThuc" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TenHinhThuc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Nhap" Type="Boolean" Nullable="false" />
+    <Property Name="STT" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="PhieuXuatNhap" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaHin__25869641" FromRole="HinhThucNhapXuat" ToRole="PhieuXuatNhap" />
+  </EntityType>
+  <EntityType Name="Kho">
+    <Key>
+      <PropertyRef Name="MaKho" />
+    </Key>
+    <Property Name="MaKho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKho" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Xoa" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PhieuXuatNhap" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4" FromRole="Kho" ToRole="PhieuXuatNhap" />
+  </EntityType>
+  <EntityType Name="LoaiPhieu">
+    <Key>
+      <PropertyRef Name="MaLoaiPhieu" />
+    </Key>
+    <Property Name="MaLoaiPhieu" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TenLoaiPhieu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhieuXuatNhap" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208" FromRole="LoaiPhieu" ToRole="PhieuXuatNhap" />
+  </EntityType>
+  <Association Name="FK__PhieuXuat__MaHin__25869641">
+    <End Type="TH.MiniShop.Models.HinhThucNhapXuat" Role="HinhThucNhapXuat" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.PhieuXuatNhap" Role="PhieuXuatNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HinhThucNhapXuat">
+        <PropertyRef Name="MaHinhThuc" />
+      </Principal>
+      <Dependent Role="PhieuXuatNhap">
+        <PropertyRef Name="MaHinhThuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuat__MaKho__300424B4">
+    <End Type="TH.MiniShop.Models.Kho" Role="Kho" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.PhieuXuatNhap" Role="PhieuXuatNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kho">
+        <PropertyRef Name="MaKho" />
+      </Principal>
+      <Dependent Role="PhieuXuatNhap">
+        <PropertyRef Name="MaKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuXuat__MaLoa__24927208">
+    <End Type="TH.MiniShop.Models.LoaiPhieu" Role="LoaiPhieu" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.PhieuXuatNhap" Role="PhieuXuatNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhieu">
+        <PropertyRef Name="MaLoaiPhieu" />
+      </Principal>
+      <Dependent Role="PhieuXuatNhap">
+        <PropertyRef Name="MaLoaiPhieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKhachHang" />
+    </Key>
+    <Property Name="MaKhachHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKhachHang" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LaNhaCungCap" Type="Boolean" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Xoa" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PhieuXuatNhap" Relationship="TH.MiniShop.Models.FK__PhieuXuat__MaKha__22AA2996" FromRole="KhachHang" ToRole="PhieuXuatNhap" />
+  </EntityType>
+  <Association Name="FK__PhieuXuat__MaKha__22AA2996">
+    <End Type="TH.MiniShop.Models.KhachHang" Role="KhachHang" Multiplicity="1" />
+    <End Type="TH.MiniShop.Models.PhieuXuatNhap" Role="PhieuXuatNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKhachHang" />
+      </Principal>
+      <Dependent Role="PhieuXuatNhap">
+        <PropertyRef Name="MaKhachHang" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

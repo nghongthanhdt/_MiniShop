@@ -27,6 +27,7 @@ namespace TH.MiniShop.Models
         public string DonViTinh { get; set; }
         public decimal SoLuongToiThieu { get; set; }
         public decimal SoLuongBaoDong { get; set; }
+        public string KyHieu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }

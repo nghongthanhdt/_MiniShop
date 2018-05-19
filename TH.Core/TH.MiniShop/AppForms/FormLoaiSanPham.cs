@@ -112,6 +112,10 @@ namespace TH.MiniShop.AppForms
             {
                 return;
             }
+            if (!kemtraxoa_tontaiSanPham())
+            {
+                return;
+            }
             try
             {
                 
@@ -119,13 +123,16 @@ namespace TH.MiniShop.AppForms
                 {
                     return;
                 }
-
+                
                 int id = int.Parse(txtID.Text);
                 var loai = db.LoaiSanPham.Find(id);
                 db.LoaiSanPham.Remove(loai);
                 db.SaveChanges();
                 btnLuu.Enabled = false;
+                btnThemMoi.PerformClick();
                 loadgcLoaiSanPham();
+                 
+                
             }
             catch (Exception ex)
             {
@@ -140,6 +147,17 @@ namespace TH.MiniShop.AppForms
                 return false;
             }
             return true;
+        }
+        private bool kemtraxoa_tontaiSanPham()
+        {
+            int id = int.Parse(txtID.Text);
+            var loai = db.LoaiSanPham.Find(id);
+            if (loai.SanPham.ToList().Any())
+            {
+                ThMessageBox.ShowError("Danh mục này đang tồn tại sản phẩm, vui lòng xóa sản phẩm trước");
+                return false;
+            }
+            else return true;
         }
         private bool kiemtra()
         {
@@ -161,6 +179,10 @@ namespace TH.MiniShop.AppForms
         }
 
         private void gcLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            chon();
+        }
+        private void chon()
         {
             try
             {

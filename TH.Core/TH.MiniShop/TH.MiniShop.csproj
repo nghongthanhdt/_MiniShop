@@ -72,6 +72,24 @@
     <Compile Include="AppForms\FormLoaiSanPham.Designer.cs">
       <DependentUpon>FormLoaiSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\FormNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\FormNhapXuat.Designer.cs">
+      <DependentUpon>FormNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\FormQuanLyNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\FormQuanLyNhapXuat.Designer.cs">
+      <DependentUpon>FormQuanLyNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\FormSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\FormSanPham.Designer.cs">
+      <DependentUpon>FormSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +145,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForms\FormLoaiSanPham.resx">
       <DependentUpon>FormLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\FormNhapXuat.resx">
+      <DependentUpon>FormNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\FormQuanLyNhapXuat.resx">
+      <DependentUpon>FormQuanLyNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\FormSanPham.resx">
+      <DependentUpon>FormSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

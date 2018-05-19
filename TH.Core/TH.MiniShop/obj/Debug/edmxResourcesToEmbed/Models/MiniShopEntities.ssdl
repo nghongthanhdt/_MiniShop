@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="MaDonViTinh" />
     </Key>
-    <Property Name="MaDonViTinh" Type="int" Nullable="false" />
+    <Property Name="MaDonViTinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenDonViTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="HinhThucNhapXuat">
@@ -13,15 +13,19 @@
     </Key>
     <Property Name="MaHinhThuc" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="TenHinhThuc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nhap" Type="bit" Nullable="false" />
+    <Property Name="STT" Type="smallint" Nullable="false" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
       <PropertyRef Name="MaKhachHang" />
     </Key>
     <Property Name="MaKhachHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="100" />
-    <Property Name="LaKhachHang" Type="bit" Nullable="false" />
+    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="LaNhaCungCap" Type="bit" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="100" />
+    <Property Name="Xoa" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Kho">
     <Key>
@@ -44,7 +48,7 @@
     </Key>
     <Property Name="MaLoaiSanPham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoaiSanPham" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="KyHieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="KyHieu" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PhieuXuatNhap">
     <Key>
@@ -77,6 +81,7 @@
     <Property Name="DonViTinh" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoLuongToiThieu" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="SoLuongBaoDong" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="KyHieu" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="XuatNhapTonNgay">
     <Key>

@@ -33,6 +33,12 @@ namespace TH.Core.Controllers
             string str = Left(ToUnSign(s), 2).ToUpper() + number.ToString().PadLeft(3,'0');
             return str;
         }
+        public static string ToProductID(string s, int number)
+        {
+            // lấy chuỗi s ghép với số number     vd: (DU001, 1) ->> DU001001
+            string str = ToUnSign(s).ToUpper() + number.ToString().PadLeft(3, '0');
+            return str;
+        }
         public static string ToMD5(string input)
         {
             // Use input string to calculate MD5 hash

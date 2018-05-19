@@ -22,8 +22,10 @@ namespace TH.MiniShop.Models
     
         public int MaKhachHang { get; set; }
         public string TenKhachHang { get; set; }
-        public bool LaKhachHang { get; set; }
         public bool LaNhaCungCap { get; set; }
+        public string DiaChi { get; set; }
+        public string DienThoai { get; set; }
+        public bool Xoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuatNhap> PhieuXuatNhap { get; set; }
