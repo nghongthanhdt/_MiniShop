@@ -38,6 +38,7 @@ namespace TH.InSTTVLTL
             try
             {
                 txtTenBenhVien.Text = db.ThamSo.Find("tenbenhvien").GiaTri;
+                txtTenMayIn.Text = db.ThamSo.Find("tenmayin").GiaTri;
             }
             catch (Exception ex)
             {
@@ -139,6 +140,8 @@ namespace TH.InSTTVLTL
             {
                 ThamSo ts = db.ThamSo.Find("tenbenhvien");
                 ts.GiaTri = txtTenBenhVien.Text;
+                ThamSo ts2 = db.ThamSo.Find("tenmayin");
+                ts2.GiaTri = txtTenMayIn.Text;
                 db.SaveChanges();
                 ThMessageBox.Show("Lưu dữ liệu thành công");
             } catch (Exception ex)

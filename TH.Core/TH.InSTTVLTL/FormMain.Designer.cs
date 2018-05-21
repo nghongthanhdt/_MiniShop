@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.gcVLTL = new DevExpress.XtraGrid.GridControl();
             this.gvVLTL = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnInSo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCauHinh = new DevExpress.XtraEditors.SimpleButton();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenVLTL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoHienTai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayIn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnInSo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCauHinh = new DevExpress.XtraEditors.SimpleButton();
+            this.timerLamMoi = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,7 @@
             this.gcVLTL.TabIndex = 0;
             this.gcVLTL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVLTL});
+            this.gcVLTL.Click += new System.EventHandler(this.gcVLTL_Click);
             this.gcVLTL.DoubleClick += new System.EventHandler(this.gcVLTL_DoubleClick);
             // 
             // gvVLTL
@@ -78,6 +81,54 @@
             this.gvVLTL.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.True;
             this.gvVLTL.OptionsView.ShowGroupPanel = false;
             // 
+            // colID
+            // 
+            this.colID.AppearanceCell.Options.UseTextOptions = true;
+            this.colID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID.AppearanceHeader.Options.UseTextOptions = true;
+            this.colID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colID.Caption = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colTenVLTL
+            // 
+            this.colTenVLTL.Caption = "Tên VLTL";
+            this.colTenVLTL.FieldName = "TenVLTL";
+            this.colTenVLTL.Name = "colTenVLTL";
+            this.colTenVLTL.Visible = true;
+            this.colTenVLTL.VisibleIndex = 1;
+            this.colTenVLTL.Width = 336;
+            // 
+            // colSoHienTai
+            // 
+            this.colSoHienTai.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.colSoHienTai.AppearanceCell.ForeColor = System.Drawing.Color.Green;
+            this.colSoHienTai.AppearanceCell.Options.UseFont = true;
+            this.colSoHienTai.AppearanceCell.Options.UseForeColor = true;
+            this.colSoHienTai.AppearanceCell.Options.UseTextOptions = true;
+            this.colSoHienTai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSoHienTai.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSoHienTai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSoHienTai.Caption = "Số hiện tại";
+            this.colSoHienTai.FieldName = "SoHienTai";
+            this.colSoHienTai.Name = "colSoHienTai";
+            this.colSoHienTai.Visible = true;
+            this.colSoHienTai.VisibleIndex = 2;
+            this.colSoHienTai.Width = 92;
+            // 
+            // colNgayIn
+            // 
+            this.colNgayIn.AppearanceCell.ForeColor = System.Drawing.Color.Gray;
+            this.colNgayIn.AppearanceCell.Options.UseForeColor = true;
+            this.colNgayIn.Caption = "Ngày giờ in";
+            this.colNgayIn.DisplayFormat.FormatString = "g";
+            this.colNgayIn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colNgayIn.FieldName = "NgayIn";
+            this.colNgayIn.Name = "colNgayIn";
+            this.colNgayIn.Visible = true;
+            this.colNgayIn.VisibleIndex = 3;
+            this.colNgayIn.Width = 220;
+            // 
             // btnInSo
             // 
             this.btnInSo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -94,7 +145,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnThoat.Location = new System.Drawing.Point(435, 12);
+            this.btnThoat.Location = new System.Drawing.Point(591, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(128, 48);
             this.btnThoat.TabIndex = 1;
@@ -104,44 +155,17 @@
             // btnCauHinh
             // 
             this.btnCauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.Image")));
-            this.btnCauHinh.Location = new System.Drawing.Point(349, 12);
+            this.btnCauHinh.Location = new System.Drawing.Point(505, 12);
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.Size = new System.Drawing.Size(80, 27);
             this.btnCauHinh.TabIndex = 1;
             this.btnCauHinh.Text = "Cấu hình";
             this.btnCauHinh.Click += new System.EventHandler(this.btnCauHinh_Click);
             // 
-            // colTenVLTL
+            // timerLamMoi
             // 
-            this.colTenVLTL.Caption = "Tên VLTL";
-            this.colTenVLTL.FieldName = "TenVLTL";
-            this.colTenVLTL.Name = "colTenVLTL";
-            this.colTenVLTL.Visible = true;
-            this.colTenVLTL.VisibleIndex = 1;
-            this.colTenVLTL.Width = 336;
-            // 
-            // colSoHienTai
-            // 
-            this.colSoHienTai.Caption = "Số hiện tại";
-            this.colSoHienTai.FieldName = "SoHienTai";
-            this.colSoHienTai.Name = "colSoHienTai";
-            this.colSoHienTai.Visible = true;
-            this.colSoHienTai.VisibleIndex = 2;
-            this.colSoHienTai.Width = 92;
-            // 
-            // colNgayIn
-            // 
-            this.colNgayIn.Caption = "Ngày giờ in";
-            this.colNgayIn.FieldName = "NgayIn";
-            this.colNgayIn.Name = "colNgayIn";
-            this.colNgayIn.Visible = true;
-            this.colNgayIn.VisibleIndex = 3;
-            this.colNgayIn.Width = 220;
-            // 
-            // colID
-            // 
-            this.colID.Caption = "ID";
-            this.colID.Name = "colID";
+            this.timerLamMoi.Interval = 5000;
+            this.timerLamMoi.Tick += new System.EventHandler(this.timerLamMoi_Tick);
             // 
             // FormMain
             // 
@@ -173,6 +197,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenVLTL;
         private DevExpress.XtraGrid.Columns.GridColumn colSoHienTai;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayIn;
+        private System.Windows.Forms.Timer timerLamMoi;
     }
 }
 

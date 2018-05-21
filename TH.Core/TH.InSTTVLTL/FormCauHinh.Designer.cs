@@ -46,6 +46,8 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTenMayIn = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
@@ -69,10 +71,10 @@
             // 
             // gcVLTL
             // 
-            this.gcVLTL.Location = new System.Drawing.Point(16, 45);
+            this.gcVLTL.Location = new System.Drawing.Point(16, 61);
             this.gcVLTL.MainView = this.gvVLTL;
             this.gcVLTL.Name = "gcVLTL";
-            this.gcVLTL.Size = new System.Drawing.Size(493, 200);
+            this.gcVLTL.Size = new System.Drawing.Size(493, 184);
             this.gcVLTL.TabIndex = 99;
             this.gcVLTL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVLTL});
@@ -207,6 +209,23 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tên bệnh viện:";
+            // 
+            // txtTenMayIn
+            // 
+            this.txtTenMayIn.Location = new System.Drawing.Point(121, 35);
+            this.txtTenMayIn.Name = "txtTenMayIn";
+            this.txtTenMayIn.Size = new System.Drawing.Size(388, 20);
+            this.txtTenMayIn.TabIndex = 1;
+            this.txtTenMayIn.TabStop = false;
+            // 
             // FormCauHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +242,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenVLTL);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTenMayIn);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTenBenhVien);
             this.Controls.Add(this.label1);
             this.Name = "FormCauHinh";
@@ -255,5 +276,7 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private System.Windows.Forms.TextBox txtID;
         private DevExpress.XtraEditors.SimpleButton btnDong;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTenMayIn;
     }
 }
