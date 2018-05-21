@@ -58,6 +58,12 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.spinEdit3 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -75,14 +81,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // gcSanPham
             // 
-            this.gcSanPham.Location = new System.Drawing.Point(12, 130);
+            this.gcSanPham.Location = new System.Drawing.Point(12, 158);
             this.gcSanPham.MainView = this.gvSanPham;
             this.gcSanPham.Name = "gcSanPham";
-            this.gcSanPham.Size = new System.Drawing.Size(680, 406);
+            this.gcSanPham.Size = new System.Drawing.Size(680, 378);
             this.gcSanPham.TabIndex = 1;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
@@ -176,6 +188,9 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.spinEdit3);
+            this.layoutControl1.Controls.Add(this.spinEdit2);
+            this.layoutControl1.Controls.Add(this.spinEdit1);
             this.layoutControl1.Controls.Add(this.txtKyHieu);
             this.layoutControl1.Controls.Add(this.txtTenSanPham);
             this.layoutControl1.Controls.Add(this.selectLoaiSanPham);
@@ -185,7 +200,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(1, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(703, 95);
+            this.layoutControl1.Size = new System.Drawing.Size(703, 116);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -284,10 +299,13 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem2,
+            this.layoutControlItem8,
+            this.layoutControlItem9});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(703, 95);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(703, 116);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -315,7 +333,7 @@
             this.layoutControlItem4.Control = this.txtSoLuongBaoDong;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(342, 27);
+            this.layoutControlItem4.Size = new System.Drawing.Size(342, 24);
             this.layoutControlItem4.Text = "Số lượng báo động:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(94, 13);
             // 
@@ -324,7 +342,7 @@
             this.layoutControlItem5.Control = this.txtSoLuongToiThieu;
             this.layoutControlItem5.Location = new System.Drawing.Point(342, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(341, 27);
+            this.layoutControlItem5.Size = new System.Drawing.Size(341, 24);
             this.layoutControlItem5.Text = "Số lượng tối thiểu:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(94, 13);
             // 
@@ -349,7 +367,7 @@
             // btnThemMoi
             // 
             this.btnThemMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoi.Image")));
-            this.btnThemMoi.Location = new System.Drawing.Point(11, 93);
+            this.btnThemMoi.Location = new System.Drawing.Point(12, 121);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(80, 31);
             this.btnThemMoi.TabIndex = 3;
@@ -361,7 +379,7 @@
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(97, 93);
+            this.btnLuu.Location = new System.Drawing.Point(98, 121);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(128, 31);
             this.btnLuu.TabIndex = 3;
@@ -371,7 +389,7 @@
             // btnXoa
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(231, 93);
+            this.btnXoa.Location = new System.Drawing.Point(232, 121);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(104, 31);
             this.btnXoa.TabIndex = 3;
@@ -381,7 +399,7 @@
             // btnDong
             // 
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(588, 93);
+            this.btnDong.Location = new System.Drawing.Point(589, 121);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(104, 31);
             this.btnDong.TabIndex = 3;
@@ -391,11 +409,83 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(341, 99);
+            this.txtID.Location = new System.Drawing.Point(342, 127);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(56, 21);
             this.txtID.TabIndex = 4;
             this.txtID.Visible = false;
+            // 
+            // spinEdit1
+            // 
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(109, 84);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Size = new System.Drawing.Size(148, 20);
+            this.spinEdit1.StyleController = this.layoutControl1;
+            this.spinEdit1.TabIndex = 10;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.spinEdit1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(249, 24);
+            this.layoutControlItem2.Text = "Giá nhập:";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(94, 13);
+            // 
+            // spinEdit2
+            // 
+            this.spinEdit2.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit2.Location = new System.Drawing.Point(591, 84);
+            this.spinEdit2.Name = "spinEdit2";
+            this.spinEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit2.Size = new System.Drawing.Size(100, 20);
+            this.spinEdit2.StyleController = this.layoutControl1;
+            this.spinEdit2.TabIndex = 11;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.spinEdit2;
+            this.layoutControlItem8.Location = new System.Drawing.Point(482, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem8.Text = "Giá xuất bán lẻ:";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(94, 13);
+            // 
+            // spinEdit3
+            // 
+            this.spinEdit3.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit3.Location = new System.Drawing.Point(358, 84);
+            this.spinEdit3.Name = "spinEdit3";
+            this.spinEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit3.Size = new System.Drawing.Size(132, 20);
+            this.spinEdit3.StyleController = this.layoutControl1;
+            this.spinEdit3.TabIndex = 12;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.spinEdit3;
+            this.layoutControlItem9.Location = new System.Drawing.Point(249, 72);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(233, 24);
+            this.layoutControlItem9.Text = "Giá xuất bán sỉ:";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(94, 13);
             // 
             // FormSanPham
             // 
@@ -430,6 +520,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +562,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.SpinEdit txtSoLuongBaoDong;
         private DevExpress.XtraEditors.SpinEdit txtSoLuongToiThieu;
+        private DevExpress.XtraEditors.SpinEdit spinEdit3;
+        private DevExpress.XtraEditors.SpinEdit spinEdit2;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

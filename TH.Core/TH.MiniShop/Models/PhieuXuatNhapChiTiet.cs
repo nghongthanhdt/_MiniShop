@@ -18,7 +18,7 @@ namespace TH.MiniShop.Models
         public int MaPhieuXuatNhap { get; set; }
         public int MaSanPham { get; set; }
     
-        public virtual PhieuXuatNhap PhieuXuatNhap { get; set; }
         public virtual SanPham SanPham { get; set; }
+        public virtual PhieuXuatNhap PhieuXuatNhap { get; set; }
     }
 }

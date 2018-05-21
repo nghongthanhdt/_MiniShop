@@ -196,5 +196,11 @@ namespace TH.MiniShop.AppForms
         {
             this.Close();
         }
+
+        private void btnThemHang_Click(object sender, EventArgs e)
+        {
+            FormChonSanPham f = new FormChonSanPham();
+            f.ShowDialog();
+        }
     }
 }

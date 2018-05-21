@@ -25,7 +25,6 @@ namespace TH.MiniShop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<PhieuXuatNhap> PhieuXuatNhap { get; set; }
         public virtual DbSet<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }
         public virtual DbSet<XuatNhapTonNgay> XuatNhapTonNgay { get; set; }
         public virtual DbSet<SanPham> SanPham { get; set; }
@@ -35,5 +34,6 @@ namespace TH.MiniShop.Models
         public virtual DbSet<Kho> Kho { get; set; }
         public virtual DbSet<LoaiPhieu> LoaiPhieu { get; set; }
         public virtual DbSet<KhachHang> KhachHang { get; set; }
+        public virtual DbSet<PhieuXuatNhap> PhieuXuatNhap { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace TH.MiniShop.Models
         }
     
         public int MaPhieuXuatNhap { get; set; }
+        public string SoPhieu { get; set; }
         public string SoChungTu { get; set; }
         public string MaHinhThuc { get; set; }
         public string MaLoaiPhieu { get; set; }
@@ -29,11 +30,11 @@ namespace TH.MiniShop.Models
         public System.DateTime NgayXuatNhap { get; set; }
         public int MaKho { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }
         public virtual HinhThucNhapXuat HinhThucNhapXuat { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
         public virtual Kho Kho { get; set; }
         public virtual LoaiPhieu LoaiPhieu { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }
     }
 }

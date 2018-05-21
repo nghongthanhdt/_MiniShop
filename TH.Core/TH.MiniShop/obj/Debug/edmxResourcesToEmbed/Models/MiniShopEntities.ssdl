@@ -55,7 +55,8 @@
       <PropertyRef Name="MaPhieuXuatNhap" />
     </Key>
     <Property Name="MaPhieuXuatNhap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SoChungTu" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SoPhieu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoChungTu" Type="nvarchar" MaxLength="20" />
     <Property Name="MaHinhThuc" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="MaLoaiPhieu" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="MaKhachHang" Type="int" Nullable="false" />

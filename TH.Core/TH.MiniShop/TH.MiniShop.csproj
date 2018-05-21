@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\FormChonSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\FormChonSanPham.Designer.cs">
+      <DependentUpon>FormChonSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\FormLoaiSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\FormChonSanPham.resx">
+      <DependentUpon>FormChonSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\FormLoaiSanPham.resx">
       <DependentUpon>FormLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>

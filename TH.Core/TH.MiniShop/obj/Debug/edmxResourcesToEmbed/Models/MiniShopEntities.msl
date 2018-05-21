@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="THMiniShopModelsStoreContainer" CdmEntityContainer="MiniShopEntities">
-    <EntitySetMapping Name="PhieuXuatNhap">
-      <EntityTypeMapping TypeName="TH.MiniShop.Models.PhieuXuatNhap">
-        <MappingFragment StoreEntitySet="PhieuXuatNhap">
-          <ScalarProperty Name="MaPhieuXuatNhap" ColumnName="MaPhieuXuatNhap" />
-          <ScalarProperty Name="SoChungTu" ColumnName="SoChungTu" />
-          <ScalarProperty Name="MaHinhThuc" ColumnName="MaHinhThuc" />
-          <ScalarProperty Name="MaLoaiPhieu" ColumnName="MaLoaiPhieu" />
-          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
-          <ScalarProperty Name="NgayLapPhieu" ColumnName="NgayLapPhieu" />
-          <ScalarProperty Name="NgayXuatNhap" ColumnName="NgayXuatNhap" />
-          <ScalarProperty Name="MaKho" ColumnName="MaKho" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PhieuXuatNhapChiTiet">
       <EntityTypeMapping TypeName="TH.MiniShop.Models.PhieuXuatNhapChiTiet">
         <MappingFragment StoreEntitySet="PhieuXuatNhapChiTiet">
@@ -105,6 +91,21 @@
           <ScalarProperty Name="LaNhaCungCap" ColumnName="LaNhaCungCap" />
           <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
           <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuXuatNhap">
+      <EntityTypeMapping TypeName="TH.MiniShop.Models.PhieuXuatNhap">
+        <MappingFragment StoreEntitySet="PhieuXuatNhap">
+          <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+          <ScalarProperty Name="NgayXuatNhap" ColumnName="NgayXuatNhap" />
+          <ScalarProperty Name="NgayLapPhieu" ColumnName="NgayLapPhieu" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="MaLoaiPhieu" ColumnName="MaLoaiPhieu" />
+          <ScalarProperty Name="MaHinhThuc" ColumnName="MaHinhThuc" />
+          <ScalarProperty Name="SoChungTu" ColumnName="SoChungTu" />
+          <ScalarProperty Name="SoPhieu" ColumnName="SoPhieu" />
+          <ScalarProperty Name="MaPhieuXuatNhap" ColumnName="MaPhieuXuatNhap" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
