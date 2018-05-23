@@ -25,6 +25,7 @@ namespace TH.InSTTVLTL
             txtID.Text = "";
             txtTenVLTL.Text = "";
             txtSTT.Text = "";
+            txtSoHienTai.Text = "";
         }
 
         private void FormCauHinh_Load(object sender, EventArgs e)
@@ -75,19 +76,27 @@ namespace TH.InSTTVLTL
                 {
                     int id = int.Parse(txtID.Text);
                     int stt = 1;
+                    int soHienTai = 0;
                     try
                     {
                         stt = int.Parse(txtSTT.Text);
-                    } catch { }                        
+                    } catch { }
+                    try
+                    {
+                        soHienTai = int.Parse(txtSoHienTai.Text);
+                    }
+                    catch { }
                     VLTL vltl = db.VLTL.Find(id);
                     vltl.TenVLTL = txtTenVLTL.Text;
                     vltl.STT = stt;
+                    vltl.SoHienTai = soHienTai;
                     db.SaveChanges();
                 }
                 loadgcVLTL();
                 txtSTT.Text = "";
                 txtTenVLTL.Text = "";
                 txtID.Text = "";
+                txtSoHienTai.Text = "";
                 
                 
             } catch (Exception ex)
@@ -103,6 +112,7 @@ namespace TH.InSTTVLTL
             txtID.Text = id;
             txtSTT.Text = gvVLTL.GetFocusedRowCellValue("STT").ToString();
             txtTenVLTL.Text = gvVLTL.GetFocusedRowCellValue("TenVLTL").ToString();
+            txtSoHienTai.Text = gvVLTL.GetFocusedRowCellValue("SoHienTai").ToString();
 
         }
 

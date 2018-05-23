@@ -48,6 +48,9 @@
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenMayIn = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSoHienTai = new System.Windows.Forms.TextBox();
+            this.colSoHienTai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +88,8 @@
             this.gvVLTL.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
             this.colSTT,
-            this.colTenVLTL});
+            this.colTenVLTL,
+            this.colSoHienTai});
             this.gvVLTL.GridControl = this.gcVLTL;
             this.gvVLTL.Name = "gvVLTL";
             this.gvVLTL.OptionsBehavior.Editable = false;
@@ -130,7 +134,7 @@
             // 
             this.txtTenVLTL.Location = new System.Drawing.Point(77, 251);
             this.txtTenVLTL.Name = "txtTenVLTL";
-            this.txtTenVLTL.Size = new System.Drawing.Size(432, 20);
+            this.txtTenVLTL.Size = new System.Drawing.Size(212, 20);
             this.txtTenVLTL.TabIndex = 1;
             // 
             // label3
@@ -226,6 +230,28 @@
             this.txtTenMayIn.TabIndex = 1;
             this.txtTenMayIn.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(299, 254);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Hiện tại:";
+            // 
+            // txtSoHienTai
+            // 
+            this.txtSoHienTai.Location = new System.Drawing.Point(351, 251);
+            this.txtSoHienTai.Name = "txtSoHienTai";
+            this.txtSoHienTai.Size = new System.Drawing.Size(123, 20);
+            this.txtSoHienTai.TabIndex = 2;
+            // 
+            // colSoHienTai
+            // 
+            this.colSoHienTai.Caption = "SoHienTai";
+            this.colSoHienTai.FieldName = "SoHienTai";
+            this.colSoHienTai.Name = "colSoHienTai";
+            // 
             // FormCauHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +264,8 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThemMoi);
             this.Controls.Add(this.gcVLTL);
+            this.Controls.Add(this.txtSoHienTai);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSTT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenVLTL);
@@ -278,5 +306,8 @@
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenMayIn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSoHienTai;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoHienTai;
     }
 }

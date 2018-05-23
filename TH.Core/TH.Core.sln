@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.MiniShop", "TH.MiniShop\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TH.InSTTVLTL", "TH.InSTTVLTL\TH.InSTTVLTL.csproj", "{55757DC6-3459-49A4-B60D-07E867E7E3AD}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupInSTTVLTL", "SetupInSTTVLTL\SetupInSTTVLTL.vdproj", "{6C3D6415-4907-411F-BA6F-23BF2F96281D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55757DC6-3459-49A4-B60D-07E867E7E3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3D6415-4907-411F-BA6F-23BF2F96281D}.Debug|Any CPU.ActiveCfg = Debug
+		{6C3D6415-4907-411F-BA6F-23BF2F96281D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

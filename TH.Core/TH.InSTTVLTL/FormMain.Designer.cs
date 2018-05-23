@@ -40,16 +40,20 @@
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnCauHinh = new DevExpress.XtraEditors.SimpleButton();
             this.timerLamMoi = new System.Windows.Forms.Timer(this.components);
+            this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
             // 
             // gcVLTL
             // 
+            this.gcVLTL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gcVLTL.Location = new System.Drawing.Point(12, 66);
             this.gcVLTL.MainView = this.gvVLTL;
             this.gcVLTL.Name = "gcVLTL";
-            this.gcVLTL.Size = new System.Drawing.Size(707, 302);
+            this.gcVLTL.Size = new System.Drawing.Size(708, 467);
             this.gcVLTL.TabIndex = 0;
             this.gcVLTL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVLTL});
@@ -60,11 +64,11 @@
             // 
             this.gvVLTL.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.gvVLTL.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvVLTL.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gvVLTL.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 14F);
             this.gvVLTL.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvVLTL.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gvVLTL.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14F);
             this.gvVLTL.Appearance.Row.Options.UseFont = true;
-            this.gvVLTL.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.gvVLTL.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.gvVLTL.Appearance.SelectedRow.Options.UseFont = true;
             this.gvVLTL.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
@@ -97,7 +101,7 @@
             this.colTenVLTL.Name = "colTenVLTL";
             this.colTenVLTL.Visible = true;
             this.colTenVLTL.VisibleIndex = 1;
-            this.colTenVLTL.Width = 336;
+            this.colTenVLTL.Width = 247;
             // 
             // colSoHienTai
             // 
@@ -114,7 +118,7 @@
             this.colSoHienTai.Name = "colSoHienTai";
             this.colSoHienTai.Visible = true;
             this.colSoHienTai.VisibleIndex = 2;
-            this.colSoHienTai.Width = 92;
+            this.colSoHienTai.Width = 112;
             // 
             // colNgayIn
             // 
@@ -127,7 +131,7 @@
             this.colNgayIn.Name = "colNgayIn";
             this.colNgayIn.Visible = true;
             this.colNgayIn.VisibleIndex = 3;
-            this.colNgayIn.Width = 220;
+            this.colNgayIn.Width = 281;
             // 
             // btnInSo
             // 
@@ -143,9 +147,10 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnThoat.Location = new System.Drawing.Point(591, 12);
+            this.btnThoat.Location = new System.Drawing.Point(592, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(128, 48);
             this.btnThoat.TabIndex = 1;
@@ -154,8 +159,9 @@
             // 
             // btnCauHinh
             // 
+            this.btnCauHinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.Image")));
-            this.btnCauHinh.Location = new System.Drawing.Point(505, 12);
+            this.btnCauHinh.Location = new System.Drawing.Point(506, 33);
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.Size = new System.Drawing.Size(80, 27);
             this.btnCauHinh.TabIndex = 1;
@@ -167,15 +173,29 @@
             this.timerLamMoi.Interval = 5000;
             this.timerLamMoi.Tick += new System.EventHandler(this.timerLamMoi_Tick);
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.btnLamMoi.Appearance.Options.UseFont = true;
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.Location = new System.Drawing.Point(226, 33);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(102, 27);
+            this.btnLamMoi.TabIndex = 1;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 380);
+            this.ClientSize = new System.Drawing.Size(732, 545);
             this.Controls.Add(this.btnCauHinh);
             this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnInSo);
             this.Controls.Add(this.gcVLTL);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In số thứ tự VLTL";
@@ -198,6 +218,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSoHienTai;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayIn;
         private System.Windows.Forms.Timer timerLamMoi;
+        private DevExpress.XtraEditors.SimpleButton btnLamMoi;
     }
 }
 

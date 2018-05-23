@@ -45,6 +45,11 @@ namespace TH.InSTTVLTL
         private void inSo()
         {
             int[] selectedIndexs = gvVLTL.GetSelectedRows();
+            if (selectedIndexs.Length == 0)
+            {
+                ThMessageBox.ShowError("Chưa chọn dòng cần in");
+                return;
+            }
             foreach (int i in selectedIndexs)
             {
 
@@ -166,6 +171,13 @@ namespace TH.InSTTVLTL
         private void gcVLTL_Click(object sender, EventArgs e)
         {
             timerLamMoi.Stop();
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            timerLamMoi.Stop();
+            timerLamMoi.Start();
+            loadgcVLTL();
         }
     }
 }
