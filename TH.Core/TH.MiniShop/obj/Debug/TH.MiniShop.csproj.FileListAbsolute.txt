@@ -201,3 +201,4 @@ D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.Properties.Resou
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.csproj.GenerateResource.Cache
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.exe.licenses
 D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormChonSanPham.resources
+D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormChonSanPham.resources

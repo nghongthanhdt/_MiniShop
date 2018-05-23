@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Server>SERVER\SQLSERVER2008R2</Server>
+  <UserName>HongThanh</UserName>
+  <Password>phcn@123</Password>
+  <Database>PHCN</Database>
+</ConnectionConfig>

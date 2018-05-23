@@ -87,3 +87,12 @@ D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Properties.Resources.res
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csproj.GenerateResource.Cache
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.pdb
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\DevExpress.XtraLayout.v16.1.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\DevExpress.XtraLayout.v16.1.xml
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\de\DevExpress.XtraLayout.v16.1.resources.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\es\DevExpress.XtraLayout.v16.1.resources.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ja\DevExpress.XtraLayout.v16.1.resources.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ru\DevExpress.XtraLayout.v16.1.resources.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csprojResolveAssemblyReference.cache
+D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe.licenses
+D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Forms.FormDatabaseBackupManager.resources
