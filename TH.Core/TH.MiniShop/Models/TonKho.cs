@@ -12,13 +12,12 @@ namespace TH.MiniShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PhieuXuatNhapChiTiet
+    public partial class TonKho
     {
         public int ID { get; set; }
-        public int MaPhieuXuatNhap { get; set; }
         public int MaSanPham { get; set; }
+        public decimal SoLuongTon { get; set; }
     
-        public virtual PhieuXuatNhap PhieuXuatNhap { get; set; }
         public virtual SanPham SanPham { get; set; }
     }
 }

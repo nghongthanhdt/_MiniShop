@@ -144,6 +144,9 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>MiniShopEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TonKho.cs">
+      <DependentUpon>MiniShopEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\XuatNhapTonNgay.cs">
       <DependentUpon>MiniShopEntities.tt</DependentUpon>
     </Compile>

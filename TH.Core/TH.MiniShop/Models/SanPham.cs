@@ -19,6 +19,7 @@ namespace TH.MiniShop.Models
         {
             this.PhieuXuatNhapChiTiet = new HashSet<PhieuXuatNhapChiTiet>();
             this.XuatNhapTonNgay = new HashSet<XuatNhapTonNgay>();
+            this.TonKho = new HashSet<TonKho>();
         }
     
         public int MaSanPham { get; set; }
@@ -28,11 +29,16 @@ namespace TH.MiniShop.Models
         public decimal SoLuongToiThieu { get; set; }
         public decimal SoLuongBaoDong { get; set; }
         public string KyHieu { get; set; }
+        public int GiaNhap { get; set; }
+        public int GiaXuatBanSi { get; set; }
+        public int GiaXuatBanLe { get; set; }
     
+        public virtual LoaiSanPham LoaiSanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<XuatNhapTonNgay> XuatNhapTonNgay { get; set; }
-        public virtual LoaiSanPham LoaiSanPham { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TonKho> TonKho { get; set; }
     }
 }

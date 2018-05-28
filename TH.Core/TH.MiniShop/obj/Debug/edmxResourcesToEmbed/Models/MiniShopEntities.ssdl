@@ -63,6 +63,7 @@
     <Property Name="NgayLapPhieu" Type="datetime" Nullable="false" />
     <Property Name="NgayXuatNhap" Type="datetime" Nullable="false" />
     <Property Name="MaKho" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="PhieuXuatNhapChiTiet">
     <Key>
@@ -83,6 +84,17 @@
     <Property Name="SoLuongToiThieu" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="SoLuongBaoDong" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="KyHieu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GiaNhap" Type="int" Nullable="false" />
+    <Property Name="GiaXuatBanSi" Type="int" Nullable="false" />
+    <Property Name="GiaXuatBanLe" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TonKho">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaSanPham" Type="int" Nullable="false" />
+    <Property Name="SoLuongTon" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="XuatNhapTonNgay">
     <Key>
@@ -194,6 +206,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TonKho_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="TonKho" Type="Self.TonKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Principal>
+      <Dependent Role="TonKho">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="THMiniShopModelsStoreContainer">
     <EntitySet Name="DonViTinh" EntityType="Self.DonViTinh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HinhThucNhapXuat" EntityType="Self.HinhThucNhapXuat" Schema="dbo" store:Type="Tables" />
@@ -204,6 +228,7 @@
     <EntitySet Name="PhieuXuatNhap" EntityType="Self.PhieuXuatNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhieuXuatNhapChiTiet" EntityType="Self.PhieuXuatNhapChiTiet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TonKho" EntityType="Self.TonKho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="XuatNhapTonNgay" EntityType="Self.XuatNhapTonNgay" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__PhieuXuat__MaHin__25869641" Association="Self.FK__PhieuXuat__MaHin__25869641">
       <End Role="HinhThucNhapXuat" EntitySet="HinhThucNhapXuat" />
@@ -236,6 +261,10 @@
     <AssociationSet Name="FK__XuatNhapT__MaSan__21B6055D" Association="Self.FK__XuatNhapT__MaSan__21B6055D">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="XuatNhapTonNgay" EntitySet="XuatNhapTonNgay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TonKho_SanPham" Association="Self.FK_TonKho_SanPham">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="TonKho" EntitySet="TonKho" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

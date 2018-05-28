@@ -29,6 +29,7 @@ namespace TH.MiniShop.Models
         public System.DateTime NgayLapPhieu { get; set; }
         public System.DateTime NgayXuatNhap { get; set; }
         public int MaKho { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual HinhThucNhapXuat HinhThucNhapXuat { get; set; }
         public virtual KhachHang KhachHang { get; set; }
