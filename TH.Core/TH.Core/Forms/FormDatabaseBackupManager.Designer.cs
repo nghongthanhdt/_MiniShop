@@ -277,11 +277,14 @@
             this.gcConfigName.TabIndex = 10;
             this.gcConfigName.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvConfigName});
+            this.gcConfigName.Click += new System.EventHandler(this.gcConfigName_Click);
             // 
             // gvConfigName
             // 
             this.gvConfigName.GridControl = this.gcConfigName;
             this.gvConfigName.Name = "gvConfigName";
+            this.gvConfigName.OptionsBehavior.Editable = false;
+            this.gvConfigName.OptionsBehavior.ReadOnly = true;
             this.gvConfigName.OptionsView.ShowGroupPanel = false;
             // 
             // xtraTabControl1

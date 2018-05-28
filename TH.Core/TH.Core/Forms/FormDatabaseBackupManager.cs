@@ -17,6 +17,7 @@ namespace TH.Core.Forms
     public partial class FormDatabaseBackupManager : Form
     {
         string _path = "config.xml";
+        DataTable dt = new DataTable();
         public FormDatabaseBackupManager()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace TH.Core.Forms
             
             List<SqlConnectionConfig> list = new List<SqlConnectionConfig>();
             SqlConnectionConfig config = new SqlConnectionConfig();
-            config.ConfigName = txtConfigName.Text + " (" + txtDatabase.Text + ")";
+            config.ConfigName = txtConfigName.Text;
             config.Server = txtServer.Text;
             config.UserName = txtUserName.Text;
             config.Password = txtPassword.Text;
@@ -109,7 +110,7 @@ namespace TH.Core.Forms
         private void loadFileConfig()
         {
             List<SqlConnectionConfig> listConfig = XmlController.LoadSqlConnectionConfigFromXMLFile(_path);
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             dt.Columns.Add("ConfigName");
             DataRow row;
             foreach (var item in listConfig)
@@ -120,6 +121,13 @@ namespace TH.Core.Forms
             }
             gcConfigName.DataSource = dt;
             
+        }
+
+        private void gcConfigName_Click(object sender, EventArgs e)
+        {
+            string configName = gvConfigName.GetFocusedRowCellValue("ConfigName").ToString();
+            
+
         }
     }
 }
