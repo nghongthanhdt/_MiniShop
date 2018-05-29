@@ -23,7 +23,7 @@ namespace TH.Core
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new FormDatabaseBackupManager());
+            Application.Run(new Form1());
         }
     }
 }

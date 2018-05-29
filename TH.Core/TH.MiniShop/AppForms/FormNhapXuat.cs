@@ -16,59 +16,27 @@ namespace TH.MiniShop.AppForms
     public partial class FormNhapXuat : DevExpress.XtraEditors.XtraForm
     {
         MiniShopEntities db = new MiniShopEntities();
-        List<SanPham> listSanPhamDaChon = new List<SanPham>();
-        DataTable dtSanPhamDangChon = new DataTable();
-        public string maLoaiPhieu = "";
         public FormNhapXuat()
         {
             InitializeComponent();
-            thietlapDataTable();
-            init();
         }
-        
-        private void thietlapDataTable()
-        {
-            dtSanPhamDangChon.Columns.Add("STT", typeof(int));
-            dtSanPhamDangChon.Columns.Add("TenSanPham", typeof(string));
-            dtSanPhamDangChon.Columns.Add("DonViTinh", typeof(string));
-            dtSanPhamDangChon.Columns.Add("SoLuong", typeof(decimal));
-            dtSanPhamDangChon.Columns.Add("DonGia", typeof(int));
-            dtSanPhamDangChon.Columns.Add("ThanhTien", typeof(decimal));
-        }
+
         private void FormNhapXuat_Load(object sender, EventArgs e)
         {
             load();
         }       
         private void load()
         {
-            loadselectHinhThuc(maLoaiPhieu);
-            loadselectLoaiPhieu(maLoaiPhieu);
-        }
-        private void init()
-        {
-            //loadselectLoaiPhieu("");
-
-            loadselectKho();            
+            loadselectLoaiPhieu();
+            loadselectKho();
+            loadselectHinhThuc();
             loadselectKhachHang();                    
             dateNgayNhap.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             dateNgayLapPhieu.EditValue = DateTime.Now;
-            dateNgayLapPhieu.Enabled = false;
-            selectKhachHang.EditValue = 0;
         }
-        private void loadselectLoaiPhieu(string maLoaiPhieu)
+        private void loadselectLoaiPhieu()
         {
-            var listLoaiPhieu = new List<LoaiPhieu>();
-            if (maLoaiPhieu == "PN")
-            {
-                listLoaiPhieu = db.LoaiPhieu.Where(x => x.MaLoaiPhieu == "PN").ToList();
-            } else if (maLoaiPhieu == "PX")
-            {
-                listLoaiPhieu = db.LoaiPhieu.Where(x => x.MaLoaiPhieu == "PX").ToList();
-            } else
-            {
-                listLoaiPhieu = db.LoaiPhieu.ToList();
-            }
-
+            var listLoaiPhieu = db.LoaiPhieu.ToList();
             selectLoaiPhieu.Properties.DataSource = listLoaiPhieu;
             selectLoaiPhieu.EditValue = listLoaiPhieu.First().MaLoaiPhieu;
         }
@@ -78,20 +46,9 @@ namespace TH.MiniShop.AppForms
             selectKho.Properties.DataSource = listKho;
             selectKho.Properties.NullText = "Chọn kho...";
         }
-        private void loadselectHinhThuc(string loaiPhieu)
+        private void loadselectHinhThuc()
         {
-            var listHinhThuc = new List<HinhThucNhapXuat>();
-            if (loaiPhieu == "PN")
-            {
-                listHinhThuc = db.HinhThucNhapXuat.Where(x => x.Nhap == true).OrderBy(x => x.STT).ToList();
-            } else if (loaiPhieu == "PX")
-            {
-                listHinhThuc = db.HinhThucNhapXuat.Where(x => x.Nhap == false).OrderBy(x => x.STT).ToList();
-            }
-            else
-            {
-                listHinhThuc = db.HinhThucNhapXuat.OrderBy(x => x.STT).ToList();
-            }                                                  
+            var listHinhThuc = db.HinhThucNhapXuat.OrderBy(x => x.STT).ToList();
             selectHinhThuc.Properties.DataSource = listHinhThuc;
             selectHinhThuc.EditValue = listHinhThuc.First().MaHinhThuc;
         }
@@ -165,8 +122,7 @@ namespace TH.MiniShop.AppForms
                     db.KhachHang.Add(kh);
                     db.SaveChanges();
                     loadselectKhachHang();
-                    selectKhachHang.EditValue = kh.MaKhachHang;
-                    txtKhachHangMoi.Text = "";
+                    selectKhachHang.EditValue = kh.MaKhachHang;                    
                     return true;
                 }
                 else
@@ -243,64 +199,8 @@ namespace TH.MiniShop.AppForms
 
         private void btnThemHang_Click(object sender, EventArgs e)
         {
-            
-            if (selectKho.EditValue == null)
-            {
-                ThMessageBox.ShowError("Chưa chọn kho");
-                return;
-            }
-
             FormChonSanPham f = new FormChonSanPham();
-            f.txtKho.Text = selectKho.Text;
-            f.txtLoaiPhieu.Text = selectLoaiPhieu.Text;
-            f.maLoaiPhieu = selectLoaiPhieu.EditValue.ToString();
             f.ShowDialog();
-            if (f.boQua == true)
-            {
-                return;
-            }
-            int selectedMaSanPham = f.selectedMaSanPham;
-            
-            if (selectedMaSanPham == 0)
-            {
-                ThMessageBox.ShowError("Chưa chọn được sản phẩm, vui lòng chọn lại");
-                return;
-            }
-
-            // lấy sẩn phẩm load lên gcSanPham
-            if (listSanPhamDaChon.Exists(x => x.MaSanPham == selectedMaSanPham))
-            {
-                ThMessageBox.Show("Sản phẩm này đã chọn rồi");
-                return;
-            }
-            var sanPham = db.SanPham.Find(selectedMaSanPham);
-            DataRow row = dtSanPhamDangChon.NewRow();
-            row["STT"] = dtSanPhamDangChon.Rows.Count + 1;
-            row["TenSanPham"] = sanPham.TenSanPham;
-            row["DonViTinh"] = sanPham.DonViTinh;
-            row["DonGia"] = sanPham.GiaNhap;
-            row["SoLuong"] = 1;
-            row["ThanhTien"] = sanPham.GiaNhap;
-            dtSanPhamDangChon.Rows.Add(row);
-
-            gcSanPham.RefreshDataSource();
-            gcSanPham.DataSource = dtSanPhamDangChon;
-
-
-
-        }
-
-        private void selectLoaiPhieu_EditValueChanged(object sender, EventArgs e)
-        {
-            string loaiPhieu = selectLoaiPhieu.EditValue.ToString();
-            loadselectHinhThuc(loaiPhieu);
-        }
-
-        private void gvSanPham_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
-        {
-            int soLuong = int.Parse(gvSanPham.GetFocusedRowCellValue("SoLuong").ToString());
-            int donGia = int.Parse(gvSanPham.GetFocusedRowCellValue("DonGia").ToString());
-            gvSanPham.SetFocusedRowCellValue("ThanhTien", soLuong * donGia);
         }
     }
 }

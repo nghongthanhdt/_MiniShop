@@ -29,21 +29,5 @@ namespace TH.MiniShop.AppForms
             var listPhieu = db.PhieuXuatNhap.ToList();
             gcPhieuNhapXuat.DataSource = listPhieu;
         }
-
-        private void btnNhapKho_Click(object sender, EventArgs e)
-        {
-            FormNhapXuat f = new FormNhapXuat();
-            f.selectLoaiPhieu.Enabled = false;
-            f.maLoaiPhieu = "PN";            
-            f.ShowDialog();
-        }
-
-        private void btnXuatKho_Click(object sender, EventArgs e)
-        {
-            FormNhapXuat f = new FormNhapXuat();
-            f.selectLoaiPhieu.Enabled = false;
-            f.maLoaiPhieu = "PX";
-            f.ShowDialog();
-        }
     }
 }

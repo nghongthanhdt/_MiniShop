@@ -27,6 +27,7 @@ namespace TH.MiniShop.Models
     
         public virtual DbSet<PhieuXuatNhapChiTiet> PhieuXuatNhapChiTiet { get; set; }
         public virtual DbSet<XuatNhapTonNgay> XuatNhapTonNgay { get; set; }
+        public virtual DbSet<SanPham> SanPham { get; set; }
         public virtual DbSet<DonViTinh> DonViTinh { get; set; }
         public virtual DbSet<LoaiSanPham> LoaiSanPham { get; set; }
         public virtual DbSet<HinhThucNhapXuat> HinhThucNhapXuat { get; set; }
@@ -34,7 +35,5 @@ namespace TH.MiniShop.Models
         public virtual DbSet<LoaiPhieu> LoaiPhieu { get; set; }
         public virtual DbSet<KhachHang> KhachHang { get; set; }
         public virtual DbSet<PhieuXuatNhap> PhieuXuatNhap { get; set; }
-        public virtual DbSet<SanPham> SanPham { get; set; }
-        public virtual DbSet<TonKho> TonKho { get; set; }
     }
 }

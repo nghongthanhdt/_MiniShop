@@ -7,8 +7,12 @@
       <Diagram DiagramId="96de6aaacb6d438b8ac4d5b9f821bf9c" Name="Diagram1">
         <EntityTypeShape EntityType="TH.MiniShop.Models.PhieuXuatNhapChiTiet" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.XuatNhapTonNgay" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TH.MiniShop.Models.SanPham" Width="1.5" PointX="3" PointY="13.25" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.DonViTinh" Width="1.5" PointX="4" PointY="5.25" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiSanPham" Width="1.5" PointX="0.75" PointY="13.875" />
+        <AssociationConnector Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.HinhThucNhapXuat" Width="1.5" PointX="0.75" PointY="2.5" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.Kho" Width="1.5" PointX="0.75" PointY="16.625" />
         <EntityTypeShape EntityType="TH.MiniShop.Models.LoaiPhieu" Width="1.5" PointX="0.75" PointY="9.25" />
@@ -19,12 +23,6 @@
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaKho__300424B4" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaLoa__24927208" />
         <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaPhi__239E4DCF" />
-        <EntityTypeShape EntityType="TH.MiniShop.Models.SanPham" Width="1.5" PointX="3" PointY="17.875" />
-        <EntityTypeShape EntityType="TH.MiniShop.Models.TonKho" Width="1.5" PointX="5.25" PointY="18.875" />
-        <AssociationConnector Association="TH.MiniShop.Models.FK__SanPham__MaLoaiS__1FCDBCEB" />
-        <AssociationConnector Association="TH.MiniShop.Models.FK__PhieuXuat__MaSan__20C1E124" />
-        <AssociationConnector Association="TH.MiniShop.Models.FK__XuatNhapT__MaSan__21B6055D" />
-        <AssociationConnector Association="TH.MiniShop.Models.FK_TonKho_SanPham" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -43,8 +43,9 @@
             this.colMaLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChon = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtKho = new System.Windows.Forms.TextBox();
-            this.txtLoaiPhieu = new System.Windows.Forms.TextBox();
+            this.txtMaKho = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -58,8 +59,6 @@
             this.gcSanPham.TabIndex = 2;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
-            this.gcSanPham.Click += new System.EventHandler(this.gcSanPham_Click);
-            this.gcSanPham.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gcSanPham_MouseDoubleClick);
             // 
             // gvSanPham
             // 
@@ -87,14 +86,14 @@
             // colMaSanPham
             // 
             this.colMaSanPham.Caption = "Mã loại";
-            this.colMaSanPham.FieldName = "SanPham.MaSanPham";
+            this.colMaSanPham.FieldName = "MaSanPham";
             this.colMaSanPham.Name = "colMaSanPham";
             this.colMaSanPham.Width = 152;
             // 
             // colTenSanPham
             // 
             this.colTenSanPham.Caption = "Tên sản phẩm";
-            this.colTenSanPham.FieldName = "SanPham.TenSanPham";
+            this.colTenSanPham.FieldName = "TenSanPham";
             this.colTenSanPham.Name = "colTenSanPham";
             this.colTenSanPham.Visible = true;
             this.colTenSanPham.VisibleIndex = 1;
@@ -103,9 +102,6 @@
             // colTonKho
             // 
             this.colTonKho.Caption = "Tồn kho";
-            this.colTonKho.DisplayFormat.FormatString = "{0:#,#}";
-            this.colTonKho.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colTonKho.FieldName = "SoLuongTon";
             this.colTonKho.Name = "colTonKho";
             this.colTonKho.Visible = true;
             this.colTonKho.VisibleIndex = 6;
@@ -114,9 +110,6 @@
             // colGiaNhap
             // 
             this.colGiaNhap.Caption = "Giá nhập";
-            this.colGiaNhap.DisplayFormat.FormatString = "{0:#,#}";
-            this.colGiaNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colGiaNhap.FieldName = "SanPham.GiaNhap";
             this.colGiaNhap.Name = "colGiaNhap";
             this.colGiaNhap.Visible = true;
             this.colGiaNhap.VisibleIndex = 3;
@@ -125,9 +118,6 @@
             // colGiaSi
             // 
             this.colGiaSi.Caption = "Giá bán sỉ";
-            this.colGiaSi.DisplayFormat.FormatString = "{0:#,#}";
-            this.colGiaSi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colGiaSi.FieldName = "SanPham.GiaXuatBanSi";
             this.colGiaSi.Name = "colGiaSi";
             this.colGiaSi.Visible = true;
             this.colGiaSi.VisibleIndex = 5;
@@ -135,9 +125,6 @@
             // colGiaLe
             // 
             this.colGiaLe.Caption = "Giá bán lẻ";
-            this.colGiaLe.DisplayFormat.FormatString = "{0:#,#}";
-            this.colGiaLe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colGiaLe.FieldName = "SanPham.GiaXuatBanLe";
             this.colGiaLe.Name = "colGiaLe";
             this.colGiaLe.Visible = true;
             this.colGiaLe.VisibleIndex = 4;
@@ -145,7 +132,7 @@
             // colDonViTinh
             // 
             this.colDonViTinh.Caption = "Đơn vị";
-            this.colDonViTinh.FieldName = "SanPham.DonViTinh";
+            this.colDonViTinh.FieldName = "DonViTinh";
             this.colDonViTinh.Name = "colDonViTinh";
             this.colDonViTinh.Visible = true;
             this.colDonViTinh.VisibleIndex = 2;
@@ -154,7 +141,7 @@
             // colKyHieu
             // 
             this.colKyHieu.Caption = "Mã SP";
-            this.colKyHieu.FieldName = "SanPham.KyHieu";
+            this.colKyHieu.FieldName = "KyHieu";
             this.colKyHieu.Name = "colKyHieu";
             this.colKyHieu.Visible = true;
             this.colKyHieu.VisibleIndex = 0;
@@ -163,7 +150,7 @@
             // colTenLoaiSanPham
             // 
             this.colTenLoaiSanPham.Caption = "Loại";
-            this.colTenLoaiSanPham.FieldName = "SanPham.LoaiSanPham.TenLoaiSanPham";
+            this.colTenLoaiSanPham.FieldName = "LoaiSanPham.TenLoaiSanPham";
             this.colTenLoaiSanPham.Name = "colTenLoaiSanPham";
             this.colTenLoaiSanPham.Visible = true;
             this.colTenLoaiSanPham.VisibleIndex = 1;
@@ -171,67 +158,64 @@
             // colMaLoaiSanPham
             // 
             this.colMaLoaiSanPham.Caption = "Mã loại sản phẩm";
-            this.colMaLoaiSanPham.FieldName = "SanPham.LoaiSanPham.MaLoaiSanPham";
+            this.colMaLoaiSanPham.FieldName = "LoaiSanPham.MaLoaiSanPham";
             this.colMaLoaiSanPham.Name = "colMaLoaiSanPham";
             // 
             // btnChon
             // 
-            this.btnChon.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnChon.Appearance.Options.UseFont = true;
             this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
-            this.btnChon.Location = new System.Drawing.Point(201, 401);
+            this.btnChon.Location = new System.Drawing.Point(13, 401);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(126, 27);
             this.btnChon.TabIndex = 3;
             this.btnChon.Text = "Đồng ý";
-            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // btnDong
             // 
-            this.btnDong.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(333, 401);
+            this.btnDong.Location = new System.Drawing.Point(145, 401);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(126, 27);
             this.btnDong.TabIndex = 3;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            this.btnDong.Text = "Bỏ qua";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Kho:";
             // 
             // txtKho
             // 
-            this.txtKho.Enabled = false;
-            this.txtKho.Location = new System.Drawing.Point(124, 9);
+            this.txtKho.Location = new System.Drawing.Point(48, 10);
             this.txtKho.Name = "txtKho";
-            this.txtKho.Size = new System.Drawing.Size(147, 21);
+            this.txtKho.Size = new System.Drawing.Size(175, 21);
             this.txtKho.TabIndex = 5;
             // 
-            // txtLoaiPhieu
+            // txtMaKho
             // 
-            this.txtLoaiPhieu.Enabled = false;
-            this.txtLoaiPhieu.Location = new System.Drawing.Point(13, 9);
-            this.txtLoaiPhieu.Name = "txtLoaiPhieu";
-            this.txtLoaiPhieu.Size = new System.Drawing.Size(105, 21);
-            this.txtLoaiPhieu.TabIndex = 5;
+            this.txtMaKho.Location = new System.Drawing.Point(229, 10);
+            this.txtMaKho.Name = "txtMaKho";
+            this.txtMaKho.Size = new System.Drawing.Size(42, 21);
+            this.txtMaKho.TabIndex = 6;
+            this.txtMaKho.Visible = false;
             // 
             // FormChonSanPham
             // 
-            this.AcceptButton = this.btnChon;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnDong;
             this.ClientSize = new System.Drawing.Size(685, 440);
-            this.ControlBox = false;
-            this.Controls.Add(this.txtLoaiPhieu);
+            this.Controls.Add(this.txtMaKho);
             this.Controls.Add(this.txtKho);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.gcSanPham);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormChonSanPham";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chọn sản phẩm";
-            this.Load += new System.EventHandler(this.FormChonSanPham_Load);
+            this.Text = "ChonSanPham";
             ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).EndInit();
             this.ResumeLayout(false);
@@ -255,7 +239,8 @@
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraGrid.Columns.GridColumn colGiaSi;
         private DevExpress.XtraGrid.Columns.GridColumn colGiaLe;
-        public System.Windows.Forms.TextBox txtKho;
-        public System.Windows.Forms.TextBox txtLoaiPhieu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtKho;
+        private System.Windows.Forms.TextBox txtMaKho;
     }
 }

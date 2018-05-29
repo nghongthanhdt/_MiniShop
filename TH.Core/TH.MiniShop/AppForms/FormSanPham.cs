@@ -87,21 +87,10 @@ namespace TH.MiniShop.AppForms
                     try { slToiThieu = decimal.Parse(txtSoLuongToiThieu.EditValue.ToString()); } catch { }
                     sp.SoLuongBaoDong = slBaoDong;
                     sp.SoLuongToiThieu = slToiThieu;
-                    sp.GiaNhap = int.Parse(spinGiaNhap.EditValue.ToString());
-                    sp.GiaXuatBanSi = int.Parse(spinGiaXuatBanSi.EditValue.ToString());
-                    sp.GiaXuatBanLe = int.Parse(spinGiaXuatBanLe.EditValue.ToString());
-
                     db.SanPham.Add(sp);
                     db.SaveChanges();
                     sp.KyHieu = TH.Core.Controllers.StringController.ToProductID(sp.LoaiSanPham.KyHieu, sp.MaSanPham);
-                    TonKho tk = new TonKho();
-                    tk.MaSanPham = sp.MaSanPham;
-                    tk.SoLuongTon = 0;
-                    db.TonKho.Add(tk);
                     db.SaveChanges();
-
-
-
                     txtTenSanPham.Text = "";
                     txtKyHieu.Text = "";
                     txtID.Text = "";
@@ -122,9 +111,6 @@ namespace TH.MiniShop.AppForms
                     try { slToiThieu = decimal.Parse(txtSoLuongToiThieu.EditValue.ToString()); } catch { }
                     sp.SoLuongBaoDong = slBaoDong;
                     sp.SoLuongToiThieu = slToiThieu;
-                    sp.GiaNhap = int.Parse(spinGiaNhap.EditValue.ToString());
-                    sp.GiaXuatBanSi = int.Parse(spinGiaXuatBanSi.EditValue.ToString());
-                    sp.GiaXuatBanLe = int.Parse(spinGiaXuatBanLe.EditValue.ToString());
                     db.SaveChanges();
                     loadgcSanPham();
                 }
@@ -143,9 +129,6 @@ namespace TH.MiniShop.AppForms
                 txtKyHieu.Text = gvSanPham.GetFocusedRowCellValue("KyHieu").ToString();
                 selectDonViTinh.EditValue = gvSanPham.GetFocusedRowCellValue("DonViTinh").ToString();
                 selectLoaiSanPham.EditValue = int.Parse(gvSanPham.GetFocusedRowCellValue("MaLoaiSanPham").ToString());
-                spinGiaNhap.EditValue = int.Parse(gvSanPham.GetFocusedRowCellValue("MaLoaiSanPham").ToString());
-                spinGiaXuatBanSi.EditValue = int.Parse(gvSanPham.GetFocusedRowCellValue("GiaXuatBanSi").ToString());
-                spinGiaXuatBanLe.EditValue = int.Parse(gvSanPham.GetFocusedRowCellValue("GiaXuatBanLe").ToString());
                 txtSoLuongBaoDong.Text = gvSanPham.GetFocusedRowCellValue("SoLuongBaoDong").ToString();
                 txtSoLuongToiThieu.Text = gvSanPham.GetFocusedRowCellValue("SoLuongToiThieu").ToString();
                 btnLuu.Enabled = true;
@@ -171,7 +154,6 @@ namespace TH.MiniShop.AppForms
 
                 int id = int.Parse(txtID.Text);
                 var sp = db.SanPham.Find(id);
-                db.TonKho.RemoveRange(sp.TonKho);
                 db.SanPham.Remove(sp);
                 db.SaveChanges();
                 btnThemMoi.PerformClick();

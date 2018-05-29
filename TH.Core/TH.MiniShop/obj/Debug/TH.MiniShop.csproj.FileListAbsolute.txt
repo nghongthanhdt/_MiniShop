@@ -202,6 +202,3 @@ D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.csproj.GenerateR
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.exe.licenses
 D:\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormChonSanPham.resources
 D:\_Working\_MiniShop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.AppForms.FormChonSanPham.resources
-C:\Users\HongThanh\Desktop\TH.Core\TH.MiniShop\bin\Debug\TH.MiniShop.exe.config
-C:\Users\HongThanh\Desktop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.exe
-C:\Users\HongThanh\Desktop\TH.Core\TH.MiniShop\obj\Debug\TH.MiniShop.pdb

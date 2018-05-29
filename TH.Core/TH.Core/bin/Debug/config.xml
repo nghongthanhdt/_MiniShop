@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfSqlConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SqlConnectionConfig>
-    <ConfigName>phcn1 (PHCN)</ConfigName>
-    <Server>SERVER\SQLSERVER2008R2</Server>
-    <UserName>hongthanh</UserName>
-    <Password>phcn@123</Password>
-    <Database>PHCN</Database>
-    <DailyBackupTime>
-      <string>12:00:00 AM</string>
-    </DailyBackupTime>
-  </SqlConnectionConfig>
-  <SqlConnectionConfig>
-    <ConfigName>phcn1 (PHCN)</ConfigName>
-    <Server>SERVER\SQLSERVER2008R2</Server>
-    <UserName>hongthanh</UserName>
-    <Password>phcn@123</Password>
-    <Database>PHCN</Database>
-    <DailyBackupTime>
-      <string>12:00:00 AM</string>
-    </DailyBackupTime>
-  </SqlConnectionConfig>
-</ArrayOfSqlConnectionConfig>
+<ConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Server>SERVER\SQLSERVER2008R2</Server>
+  <UserName>HongThanh</UserName>
+  <Password>phcn@123</Password>
+  <Database>PHCN</Database>
+</ConnectionConfig>
