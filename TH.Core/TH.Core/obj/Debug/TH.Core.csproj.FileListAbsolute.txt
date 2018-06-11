@@ -134,3 +134,4 @@ D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\de\DevExpress.Office.v16.1.Core.
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\es\DevExpress.Office.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ja\DevExpress.Office.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\TH.Core.exe.config
