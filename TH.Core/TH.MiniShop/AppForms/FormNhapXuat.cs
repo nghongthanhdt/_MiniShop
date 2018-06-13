@@ -16,9 +16,14 @@ namespace TH.MiniShop.AppForms
     public partial class FormNhapXuat : DevExpress.XtraEditors.XtraForm
     {
         MiniShopEntities db = new MiniShopEntities();
+        DataTable dtSanPham = new DataTable();
         public FormNhapXuat()
         {
             InitializeComponent();
+            //dtSanPham.Columns.Add("MaSanPham", typeof(int));
+            //dtSanPham.Columns.Add("MaSanPham", typeof(int));
+            //dtSanPham.Columns.Add("MaSanPham", typeof(int));
+
         }
 
         private void FormNhapXuat_Load(object sender, EventArgs e)
@@ -200,7 +205,9 @@ namespace TH.MiniShop.AppForms
         private void btnThemHang_Click(object sender, EventArgs e)
         {
             FormChonSanPham f = new FormChonSanPham();
+            f.StartPosition = FormStartPosition.CenterScreen;            
             f.ShowDialog();
+
         }
     }
 }

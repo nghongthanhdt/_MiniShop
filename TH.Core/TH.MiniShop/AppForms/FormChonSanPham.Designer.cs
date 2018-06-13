@@ -33,7 +33,6 @@
             this.gvSanPham = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTonKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGiaNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGiaSi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGiaLe = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,19 +42,16 @@
             this.colMaLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChon = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtKho = new System.Windows.Forms.TextBox();
-            this.txtMaKho = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).BeginInit();
             this.SuspendLayout();
             // 
             // gcSanPham
             // 
-            this.gcSanPham.Location = new System.Drawing.Point(13, 36);
+            this.gcSanPham.Location = new System.Drawing.Point(13, 12);
             this.gcSanPham.MainView = this.gvSanPham;
             this.gcSanPham.Name = "gcSanPham";
-            this.gcSanPham.Size = new System.Drawing.Size(660, 359);
+            this.gcSanPham.Size = new System.Drawing.Size(660, 383);
             this.gcSanPham.TabIndex = 2;
             this.gcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSanPham});
@@ -65,7 +61,6 @@
             this.gvSanPham.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaSanPham,
             this.colTenSanPham,
-            this.colTonKho,
             this.colGiaNhap,
             this.colGiaSi,
             this.colGiaLe,
@@ -98,14 +93,6 @@
             this.colTenSanPham.Visible = true;
             this.colTenSanPham.VisibleIndex = 1;
             this.colTenSanPham.Width = 132;
-            // 
-            // colTonKho
-            // 
-            this.colTonKho.Caption = "Tồn kho";
-            this.colTonKho.Name = "colTonKho";
-            this.colTonKho.Visible = true;
-            this.colTonKho.VisibleIndex = 6;
-            this.colTonKho.Width = 93;
             // 
             // colGiaNhap
             // 
@@ -168,7 +155,8 @@
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(126, 27);
             this.btnChon.TabIndex = 3;
-            this.btnChon.Text = "Đồng ý";
+            this.btnChon.Text = "Chọn";
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // btnDong
             // 
@@ -177,49 +165,23 @@
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(126, 27);
             this.btnDong.TabIndex = 3;
-            this.btnDong.Text = "Bỏ qua";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Kho:";
-            // 
-            // txtKho
-            // 
-            this.txtKho.Location = new System.Drawing.Point(48, 10);
-            this.txtKho.Name = "txtKho";
-            this.txtKho.Size = new System.Drawing.Size(175, 21);
-            this.txtKho.TabIndex = 5;
-            // 
-            // txtMaKho
-            // 
-            this.txtMaKho.Location = new System.Drawing.Point(229, 10);
-            this.txtMaKho.Name = "txtMaKho";
-            this.txtMaKho.Size = new System.Drawing.Size(42, 21);
-            this.txtMaKho.TabIndex = 6;
-            this.txtMaKho.Visible = false;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // FormChonSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 440);
-            this.Controls.Add(this.txtMaKho);
-            this.Controls.Add(this.txtKho);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.gcSanPham);
             this.Name = "FormChonSanPham";
             this.Text = "ChonSanPham";
+            this.Load += new System.EventHandler(this.FormChonSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSanPham)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -229,7 +191,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvSanPham;
         private DevExpress.XtraGrid.Columns.GridColumn colMaSanPham;
         private DevExpress.XtraGrid.Columns.GridColumn colTenSanPham;
-        private DevExpress.XtraGrid.Columns.GridColumn colTonKho;
         private DevExpress.XtraGrid.Columns.GridColumn colGiaNhap;
         private DevExpress.XtraGrid.Columns.GridColumn colDonViTinh;
         private DevExpress.XtraGrid.Columns.GridColumn colKyHieu;
@@ -239,8 +200,5 @@
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraGrid.Columns.GridColumn colGiaSi;
         private DevExpress.XtraGrid.Columns.GridColumn colGiaLe;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtKho;
-        private System.Windows.Forms.TextBox txtMaKho;
     }
 }
