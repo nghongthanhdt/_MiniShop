@@ -135,3 +135,11 @@ D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\es\DevExpress.Office.v16.1.Core.
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ja\DevExpress.Office.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\TH.Core.exe.config
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\EntityFramework.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\System.Data.SQLite.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\System.Data.SQLite.EF6.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\System.Data.SQLite.Linq.dll
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\EntityFramework.xml
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\System.Data.SQLite.xml

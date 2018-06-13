@@ -11,9 +11,11 @@ namespace TH.Core.Lib
     public class SqlConnectionConfig
     {
         public string Server;
+        public string Port;
         public string UserName;
         public string Password;
         public string Database;
+        
     }
     public static class XmlController
     {
@@ -26,6 +28,22 @@ namespace TH.Core.Lib
                 TextWriter writer = new StreamWriter(path);                
                 serializer.Serialize(writer, obj);
                 writer.Close();
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static SqlConnectionConfig LoadSqlConnectionConfigXMLToObject(string path)
+        {
+            SqlConnectionConfig config = new SqlConnectionConfig();
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(SqlConnectionConfig));
+                TextReader reader = new StreamReader(path);
+                config = (SqlConnectionConfig)serializer.Deserialize(reader);
+                reader.Close();
+                return config;
             } catch (Exception ex)
             {
                 throw new Exception(ex.Message);
