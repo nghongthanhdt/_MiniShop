@@ -44,5 +44,20 @@ namespace DHG.Tools
             
             
         }
+
+        private void menuThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void menuBenhNhan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormTimBenhNhan f = new FormTimBenhNhan();
+            f.MdiParent = this;
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.connection = connection;
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+        }
     }
 }

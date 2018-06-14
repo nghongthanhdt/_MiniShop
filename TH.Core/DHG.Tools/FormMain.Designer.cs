@@ -32,7 +32,10 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.menuBangChiaThuoc = new DevExpress.XtraBars.BarButtonItem();
             this.menuCauHinhKetNoi = new DevExpress.XtraBars.BarButtonItem();
+            this.menuThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.menuBenhNhan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -46,9 +49,11 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.menuBangChiaThuoc,
-            this.menuCauHinhKetNoi});
+            this.menuCauHinhKetNoi,
+            this.menuThoat,
+            this.menuBenhNhan});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -74,18 +79,44 @@
             this.menuCauHinhKetNoi.Name = "menuCauHinhKetNoi";
             this.menuCauHinhKetNoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.menuCauHinhKetNoi_ItemClick);
             // 
+            // menuThoat
+            // 
+            this.menuThoat.Caption = "Thoát";
+            this.menuThoat.Glyph = ((System.Drawing.Image)(resources.GetObject("menuThoat.Glyph")));
+            this.menuThoat.Id = 3;
+            this.menuThoat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("menuThoat.LargeGlyph")));
+            this.menuThoat.Name = "menuThoat";
+            this.menuThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.menuThoat_ItemClick);
+            // 
+            // menuBenhNhan
+            // 
+            this.menuBenhNhan.Caption = "Bệnh nhân";
+            this.menuBenhNhan.Glyph = ((System.Drawing.Image)(resources.GetObject("menuBenhNhan.Glyph")));
+            this.menuBenhNhan.Id = 4;
+            this.menuBenhNhan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("menuBenhNhan.LargeGlyph")));
+            this.menuBenhNhan.Name = "menuBenhNhan";
+            this.menuBenhNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.menuBenhNhan_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3,
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Hệ thống";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.menuBenhNhan);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Tìm kiếm";
+            // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.menuCauHinhKetNoi);
+            this.ribbonPageGroup1.ItemLinks.Add(this.menuThoat);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Hệ thống";
             // 
             // ribbonPage2
             // 
@@ -112,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 360);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "FormMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -134,6 +166,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem menuCauHinhKetNoi;
+        private DevExpress.XtraBars.BarButtonItem menuThoat;
+        private DevExpress.XtraBars.BarButtonItem menuBenhNhan;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }
 

@@ -103,3 +103,4 @@ D:\_Working\_MiniShop\TH.Core\DHG.Tools\bin\Debug\ru\DevExpress.Office.v16.1.Cor
 D:\_Working\_MiniShop\TH.Core\DHG.Tools\obj\Debug\DHG.Tools.csprojResolveAssemblyReference.cache
 D:\_MiniShop\_MiniShop\TH.Core\DHG.Tools\obj\Debug\DHG.Tools.exe
 D:\_MiniShop\_MiniShop\TH.Core\DHG.Tools\obj\Debug\DHG.Tools.pdb
+D:\_Working\_MiniShop\TH.Core\DHG.Tools\obj\Debug\DHG.Tools.Forms.FormTimBenhNhan.resources

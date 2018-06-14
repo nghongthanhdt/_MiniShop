@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SqlConnectionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Server>localhost</Server>
+  <Server>128.0.0.101</Server>
   <Port>5432</Port>
   <UserName>postgres</UserName>
   <Password>phcn@123</Password>
-  <Database>phcn03</Database>
+  <Database>phcn</Database>
 </SqlConnectionConfig>
