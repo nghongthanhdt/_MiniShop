@@ -23,7 +23,7 @@ namespace DHG.Tools.Forms
 
         private void FormTimBenhNhan_Load(object sender, EventArgs e)
         {
-
+            btnXem.PerformClick();
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -35,10 +35,15 @@ namespace DHG.Tools.Forms
                                     current.dmbenhnhan.mabn, 
                                     current.dmbenhnhan.holot || ' ' || current.dmbenhnhan.ten as hoten, 
                                     current.dmbenhnhan.ngaysinh,
-                                    case when current.dmbenhnhan.gioitinh = 0  then 'Nam' else 'Nữ' end as gioitinh,
+                                    case when current.dmbenhnhan.gioitinh = '1'  then 'Nam' when current.dmbenhnhan.gioitinh = '0' then 'Nữ' end as gioitinh,
                                     current.dmthebhyt.mathe,
-                                    current.dmbenhnhan.diachi                                    
-                                from current.dmbenhnhan left join current.dmthebhyt on current.dmbenhnhan.mabn = current.dmthebhyt.mabn
+                                    current.dmbenhnhan.diachi,
+                                    current.dmthebhyt.mabvdk,                                    
+                                    current.dmbenhvien.tenbv
+                                    
+                                from current.dmbenhnhan 
+                                    left join current.dmthebhyt on current.dmbenhnhan.mabn = current.dmthebhyt.mabn
+                                    left join current.dmbenhvien on current.dmthebhyt.mabvdk = current.dmbenhvien.mabv
                                         
                                 ";
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
@@ -74,9 +79,25 @@ namespace DHG.Tools.Forms
                 string query = @"
 
                                 select
-                                    dangky.thangkt || '/' || dangky.namkt as thangkt, khambenh.ngaykcb,
-                                    dangky.makb, khambenh.maba, khambenh.maphong, 
-
+                                    dangky.thangkt || '/' || dangky.namkt as thangkt, 
+                                    khambenh.ngaykcb,
+                                    khambenh.makb, 
+                                    dangky.mabvdk, 
+                                    benhvien.tenbv,
+                                    dangky.giaycv,
+                                    case 
+                                        when dangky.mabvdk = '87164' then 'Cùng tuyến' 
+                                        when dangky.mabvdk <> '87164' and dangky.manoigt <> '' then 'Cùng tuyến' 
+                                        when dangky.mabvdk <> '87164' and dangky.manoigt = '' then 'Trái tuyến'
+                                        else '' end as cungtuyentraituyen,
+                                    dangky.taikhoan,
+                                    nhanvien.holot || ' ' || nhanvien.ten as tennhanvien,
+                                    dangky.manoigt,
+                                    dangky.noigt,
+                                    khambenh.maba, 
+                                    khambenh.maphong, 
+                                    dangky.ravien,
+                                    dangky.ngayrv,
                                     case 
 	                                    when khambenh.dakham = 0 then 'Chưa khám'
                                         when khambenh.dakham = 1 then 'Đã khám'
@@ -88,8 +109,11 @@ namespace DHG.Tools.Forms
                                     end as xutri
                                     from current.psdangky as dangky
                                     left join current.khambenh as khambenh on dangky.makb = khambenh.makb
+
+                                    left join current.dmbenhvien as benhvien on dangky.mabvdk = benhvien.mabv
+                                    inner join current.dmnhanvien as nhanvien on dangky.taikhoan = nhanvien.taikhoan
                                     where dangky.xoa = 0
-                                    and khambenh.mabn = '"+mabn+@"' order by thangkt desc, makb desc   
+                                    and khambenh.mabn = '" + mabn+@"' order by thangkt desc, makb desc   
                                 ";
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
                 adapter.Fill(dt);
@@ -113,13 +137,67 @@ namespace DHG.Tools.Forms
                 txtNgaySinh.Text = gvBenhNhan.GetFocusedRowCellValue("ngaysinh").ToString();
                 txtGioiTinh.Text = gvBenhNhan.GetFocusedRowCellValue("gioitinh").ToString();
                 txtMaTheBHYT.Text = gvBenhNhan.GetFocusedRowCellValue("mathe").ToString();
+                txtMaNoiDK.Text = gvBenhNhan.GetFocusedRowCellValue("mabvdk").ToString();
+                txtTenNoiDK.Text = gvBenhNhan.GetFocusedRowCellValue("tenbv").ToString();
                 txtDiaChi.Text = gvBenhNhan.GetFocusedRowCellValue("diachi").ToString();
+
+                
                 loadgcLuotKham(maBenhNhan);
+                clearTextBoxLuotKham();
             }
             catch (Exception ex)
             {
                 //ThMessageBox.ShowSystemError(ex.Message);
             }
+        }
+
+        private void gcBenhNhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvLuotKham_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            
+            
+        }
+        private void loadTextBoxLuotKham()
+        {
+            txtMaKB.Text = gvLuotKham.GetFocusedRowCellValue("makb").ToString();
+            txtMaPhong.Text = gvLuotKham.GetFocusedRowCellValue("maphong").ToString();
+            txtNgayKB.Text = gvLuotKham.GetFocusedRowCellValue("ngaykcb").ToString();
+            txtCungTuyenTraiTuyen.Text = gvLuotKham.GetFocusedRowCellValue("cungtuyentraituyen").ToString();
+            txtMaNoiGT.Text = gvLuotKham.GetFocusedRowCellValue("manoigt").ToString();
+            txtNoiGT.Text = gvLuotKham.GetFocusedRowCellValue("noigt").ToString();
+            txtNhanVienNhap.Text = gvLuotKham.GetFocusedRowCellValue("tennhanvien").ToString();
+            if (gvLuotKham.GetFocusedRowCellValue("manoigt").ToString() != "")
+            {
+                checkboxCoGiayGioiThieu.CheckState = CheckState.Checked;
+            } else
+            {
+                checkboxCoGiayGioiThieu.CheckState = CheckState.Unchecked;
+            }
+
+            txtMaBA.Text = gvLuotKham.GetFocusedRowCellValue("maba").ToString();
+            txtVaoVien.Text = gvLuotKham.GetFocusedRowCellValue("ngaykcb").ToString();
+            txtNgayRV.Text = gvLuotKham.GetFocusedRowCellValue("ngayrv").ToString();
+        }
+        private void clearTextBoxLuotKham()
+        {
+            txtMaKB.Text = "";
+            txtMaPhong.Text = "";
+            txtNgayKB.Text = "";
+            txtMaNoiGT.Text = "";
+            txtNoiGT.Text = "";
+            txtNhanVienNhap.Text = "";
+            txtMaBA.Text = "";
+            txtVaoVien.Text = "";
+            txtNgayRV.Text = "";
+        }
+
+        private void gcLuotKham_Click(object sender, EventArgs e)
+        {
+            loadTextBoxLuotKham();
         }
     }
 }
