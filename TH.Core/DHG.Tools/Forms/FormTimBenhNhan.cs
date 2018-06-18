@@ -86,33 +86,51 @@ namespace DHG.Tools.Forms
                                     benhvien.tenbv,
                                     dangky.giaycv,
                                     case 
+                                        
                                         when dangky.mabvdk = '87164' then 'Cùng tuyến' 
                                         when dangky.mabvdk <> '87164' and dangky.manoigt <> '' then 'Cùng tuyến' 
                                         when dangky.mabvdk <> '87164' and dangky.manoigt = '' then 'Trái tuyến'
-                                        else '' end as cungtuyentraituyen,
+                                        else ''
+                                    end as cungtuyentraituyen,
                                     dangky.taikhoan,
-                                    nhanvien.holot || ' ' || nhanvien.ten as tennhanvien,
+                                    nhanviennhap.holot || ' ' || nhanviennhap.ten as tennhanviennhap,
+                                    nhanvienkham.holot || ' ' || nhanvienkham.ten as tennhanvienkham,
+                                    bacsikham.holot || ' ' || bacsikham.ten as tenbacsikham,
                                     dangky.manoigt,
                                     dangky.noigt,
                                     khambenh.maba, 
                                     khambenh.maphong, 
-                                    dangky.ravien,
-                                    dangky.ngayrv,
+                                    bnnoitru.ngayvv,
+                                    bnnoitru.ngayrv,
+                                    donvi.tendv,
                                     case 
+                                        when chuyenvien.xoa = '1' then chuyenvien.socv || ' ( ' || chuyenvien.taikhoan || ' đã xóa) '
+                                        else chuyenvien.socv
+                                    end as socv,
+                                    chuyenvien.mabv as mabvcv,
+                                    benhvienchuyenvien.tenbv as tenbvcv,
+                                    case 
+                                        when khambenh.dakham = 5 then 'Nội trú'
+                                        when khambenh.maba <> '' then 'Ngoại trú'
 	                                    when khambenh.dakham = 0 then 'Chưa khám'
                                         when khambenh.dakham = 1 then 'Đã khám'
                                         when khambenh.dakham = 2 then 'Cho CLS'
                                         when khambenh.dakham = 3 then 'Cấp toa'
-                                        when khambenh.dakham = 4 then 'Đang chỉnh'
-                                        when khambenh.dakham = 5 then 'Nhập viện'
+                                        when khambenh.dakham = 4 then 'Đang chỉnh'                                        
                                         when khambenh.dakham = 6 then 'Chuyển viện'
                                     end as xutri
                                     from current.psdangky as dangky
                                     left join current.khambenh as khambenh on dangky.makb = khambenh.makb
-
                                     left join current.dmbenhvien as benhvien on dangky.mabvdk = benhvien.mabv
-                                    inner join current.dmnhanvien as nhanvien on dangky.taikhoan = nhanvien.taikhoan
+                                    left join current.dmnhanvien as nhanviennhap on dangky.taikhoan = nhanviennhap.taikhoan
+                                    left join current.dmnhanvien as nhanvienkham on khambenh.taikhoan = nhanvienkham.taikhoan
+                                    left join current.dmnhanvien as bacsikham on khambenh.manv = bacsikham.manv
+                                    left join current.bnnoitru as bnnoitru on khambenh.makb = bnnoitru.makb
+                                    left join current.dmdonvi as donvi on bnnoitru.madv = donvi.madv
+                                    left join current.chuyenvien as chuyenvien on khambenh.makb = chuyenvien.makb
+                                    left join current.dmbenhvien as benhvienchuyenvien on chuyenvien.mabv = benhvienchuyenvien.mabv
                                     where dangky.xoa = 0
+                                    
                                     and khambenh.mabn = '" + mabn+@"' order by thangkt desc, makb desc   
                                 ";
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
@@ -142,6 +160,7 @@ namespace DHG.Tools.Forms
                 txtDiaChi.Text = gvBenhNhan.GetFocusedRowCellValue("diachi").ToString();
 
                 
+                
                 loadgcLuotKham(maBenhNhan);
                 clearTextBoxLuotKham();
             }
@@ -166,10 +185,19 @@ namespace DHG.Tools.Forms
             txtMaKB.Text = gvLuotKham.GetFocusedRowCellValue("makb").ToString();
             txtMaPhong.Text = gvLuotKham.GetFocusedRowCellValue("maphong").ToString();
             txtNgayKB.Text = gvLuotKham.GetFocusedRowCellValue("ngaykcb").ToString();
-            txtCungTuyenTraiTuyen.Text = gvLuotKham.GetFocusedRowCellValue("cungtuyentraituyen").ToString();
+            if (txtMaTheBHYT.Text != "")
+            {
+                txtCungTuyenTraiTuyen.Text = gvLuotKham.GetFocusedRowCellValue("cungtuyentraituyen").ToString();
+            } else
+            {
+                txtCungTuyenTraiTuyen.Text = "";
+            }
+            
             txtMaNoiGT.Text = gvLuotKham.GetFocusedRowCellValue("manoigt").ToString();
             txtNoiGT.Text = gvLuotKham.GetFocusedRowCellValue("noigt").ToString();
-            txtNhanVienNhap.Text = gvLuotKham.GetFocusedRowCellValue("tennhanvien").ToString();
+            txtTenNhanVienNhap.Text = gvLuotKham.GetFocusedRowCellValue("tennhanviennhap").ToString();
+            txtTenNhanVienKham.Text = gvLuotKham.GetFocusedRowCellValue("tennhanvienkham").ToString();
+            txtTenBacSiKham.Text = gvLuotKham.GetFocusedRowCellValue("tenbacsikham").ToString();
             if (gvLuotKham.GetFocusedRowCellValue("manoigt").ToString() != "")
             {
                 checkboxCoGiayGioiThieu.CheckState = CheckState.Checked;
@@ -177,10 +205,32 @@ namespace DHG.Tools.Forms
             {
                 checkboxCoGiayGioiThieu.CheckState = CheckState.Unchecked;
             }
-
-            txtMaBA.Text = gvLuotKham.GetFocusedRowCellValue("maba").ToString();
-            txtVaoVien.Text = gvLuotKham.GetFocusedRowCellValue("ngaykcb").ToString();
+            
+            string maBA = gvLuotKham.GetFocusedRowCellValue("maba").ToString();
+            if (maBA != "")
+            {
+                if (maBA.Contains('N'))
+                {
+                    txtLoaiNhapVien.Text = "Ngoại trú";
+                }
+                else
+                {
+                    txtLoaiNhapVien.Text = "Nội trú";
+                }
+            } else
+            {
+                txtLoaiNhapVien.Text = "";
+            }
+            
+            txtMaBA.Text = maBA;
+            txtTenKhoaDieuTri.Text = gvLuotKham.GetFocusedRowCellValue("tendv").ToString();
+            txtNgayVV.Text = gvLuotKham.GetFocusedRowCellValue("ngayvv").ToString();
             txtNgayRV.Text = gvLuotKham.GetFocusedRowCellValue("ngayrv").ToString();
+
+            txtSoChuyenVien.Text = gvLuotKham.GetFocusedRowCellValue("socv").ToString();
+            txtMaBenhVienChuyenVien.Text = gvLuotKham.GetFocusedRowCellValue("mabvcv").ToString();
+            txtTenBenhVienChuyenVien.Text = gvLuotKham.GetFocusedRowCellValue("tenbvcv").ToString();
+
         }
         private void clearTextBoxLuotKham()
         {
@@ -189,10 +239,20 @@ namespace DHG.Tools.Forms
             txtNgayKB.Text = "";
             txtMaNoiGT.Text = "";
             txtNoiGT.Text = "";
-            txtNhanVienNhap.Text = "";
+            txtTenNhanVienNhap.Text = "";
+            txtTenNhanVienKham.Text = "";
+            txtTenBacSiKham.Text = "";
             txtMaBA.Text = "";
-            txtVaoVien.Text = "";
+            txtNgayVV.Text = "";
             txtNgayRV.Text = "";
+            txtCungTuyenTraiTuyen.Text = "";
+            checkboxCoGiayGioiThieu.CheckState = CheckState.Unchecked;
+            txtLoaiNhapVien.Text = "";
+            txtMaBA.Text = "";
+            txtTenKhoaDieuTri.Text = "";
+            txtSoChuyenVien.Text = "";
+            txtMaBenhVienChuyenVien.Text = "";
+            txtTenBenhVienChuyenVien.Text = "";
         }
 
         private void gcLuotKham_Click(object sender, EventArgs e)
