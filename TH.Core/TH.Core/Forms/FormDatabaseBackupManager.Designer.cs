@@ -31,32 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDatabaseBackupManager));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnKetNoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnCauHinh = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThemCauHinh = new DevExpress.XtraEditors.SimpleButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabThongTinChung = new DevExpress.XtraTab.XtraTabPage();
             this.tabSaoLuuTuDong = new DevExpress.XtraTab.XtraTabPage();
+            this.btnThemThoiGian = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnThemThoiGian = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
@@ -66,8 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -101,6 +101,14 @@
             this.textEdit4.Size = new System.Drawing.Size(251, 20);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(110, 84);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "D:\\ThuNoiBo\\DB_Backup\\PHCN09.BAK";
             // 
             // textEdit3
             // 
@@ -162,6 +170,15 @@
             this.layoutControlItem2.Text = "UserName:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(95, 13);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textEdit4;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem4.Text = "Database:";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(95, 13);
+            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textEdit3;
@@ -171,14 +188,14 @@
             this.layoutControlItem3.Text = "Password:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(95, 13);
             // 
-            // layoutControlItem4
+            // layoutControlItem5
             // 
-            this.layoutControlItem4.Control = this.textEdit4;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem4.Text = "Database:";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(95, 13);
+            this.layoutControlItem5.Control = this.textBox1;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(353, 28);
+            this.layoutControlItem5.Text = "Đường dẫn backup:";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(95, 13);
             // 
             // btnKetNoi
             // 
@@ -208,14 +225,6 @@
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "D:\\ThuNoiBo\\DB_Backup\\PHCN09.BAK";
             // 
             // btn
             // 
@@ -261,15 +270,6 @@
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Tên cấu hình";
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.textBox1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(353, 28);
-            this.layoutControlItem5.Text = "Đường dẫn backup:";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(95, 13);
             // 
             // gridControl1
             // 
@@ -319,6 +319,14 @@
             this.tabSaoLuuTuDong.Size = new System.Drawing.Size(439, 272);
             this.tabSaoLuuTuDong.Text = "Sao lưu tự động";
             // 
+            // btnThemThoiGian
+            // 
+            this.btnThemThoiGian.Location = new System.Drawing.Point(219, 139);
+            this.btnThemThoiGian.Name = "btnThemThoiGian";
+            this.btnThemThoiGian.Size = new System.Drawing.Size(75, 23);
+            this.btnThemThoiGian.TabIndex = 1;
+            this.btnThemThoiGian.Text = "simpleButton1";
+            // 
             // gridControl2
             // 
             this.gridControl2.Location = new System.Drawing.Point(3, 3);
@@ -333,14 +341,6 @@
             // 
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
-            // 
-            // btnThemThoiGian
-            // 
-            this.btnThemThoiGian.Location = new System.Drawing.Point(219, 139);
-            this.btnThemThoiGian.Name = "btnThemThoiGian";
-            this.btnThemThoiGian.Size = new System.Drawing.Size(75, 23);
-            this.btnThemThoiGian.TabIndex = 1;
-            this.btnThemThoiGian.Text = "simpleButton1";
             // 
             // FormDatabaseBackupManager
             // 
@@ -361,8 +361,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

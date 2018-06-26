@@ -21,33 +21,21 @@ namespace TH.Core.Lib
     {
         //private static string _path = "config.xml";
         public static void SaveSqlConnectionConfigToXMLFile(SqlConnectionConfig obj, string path)
-        {
-            try
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(SqlConnectionConfig));
-                TextWriter writer = new StreamWriter(path);                
-                serializer.Serialize(writer, obj);
-                writer.Close();
-            } catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+        {            
+            XmlSerializer serializer = new XmlSerializer(typeof(SqlConnectionConfig));
+            TextWriter writer = new StreamWriter(path);                
+            serializer.Serialize(writer, obj);
+            writer.Close();            
         }
 
         public static SqlConnectionConfig LoadSqlConnectionConfigXMLToObject(string path)
         {
             SqlConnectionConfig config = new SqlConnectionConfig();
-            try
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(SqlConnectionConfig));
-                TextReader reader = new StreamReader(path);
-                config = (SqlConnectionConfig)serializer.Deserialize(reader);
-                reader.Close();
-                return config;
-            } catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            XmlSerializer serializer = new XmlSerializer(typeof(SqlConnectionConfig));
+            TextReader reader = new StreamReader(path);
+            config = (SqlConnectionConfig)serializer.Deserialize(reader);
+            reader.Close();
+            return config;            
         }
     }
 }

@@ -82,7 +82,6 @@ D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\de\DevExpress.Pdf.v16.1.Core.res
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\es\DevExpress.Pdf.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ja\DevExpress.Pdf.v16.1.Core.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ru\DevExpress.Pdf.v16.1.Core.resources.dll
-D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Form1.resources
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Properties.Resources.resources
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csproj.GenerateResource.Cache
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe
@@ -243,3 +242,5 @@ D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csproj.GenerateResource
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe.licenses
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.pdb
+D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.FormMain.resources
+D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Forms.FormConnectionConfig.resources
