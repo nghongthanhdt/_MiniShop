@@ -93,6 +93,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -132,6 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InSTTVLTLEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MayIn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportSTT.cs">
@@ -139,6 +141,12 @@
     </Compile>
     <Compile Include="ReportSTT.Designer.cs">
       <DependentUpon>ReportSTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSTT_Xprinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportSTT_Xprinter.Designer.cs">
+      <DependentUpon>ReportSTT_Xprinter.cs</DependentUpon>
     </Compile>
     <Compile Include="ThamSo.cs">
       <DependentUpon>InSTTVLTLEntities.tt</DependentUpon>
@@ -164,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="ReportSTT.resx">
       <DependentUpon>ReportSTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSTT_Xprinter.resx">
+      <DependentUpon>ReportSTT_Xprinter.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="InSTTVLTLEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

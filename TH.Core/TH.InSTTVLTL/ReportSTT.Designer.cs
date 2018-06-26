@@ -33,11 +33,11 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.lblNgay = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblSTT = new DevExpress.XtraReports.UI.XRLabel();
             this.lblTenVLTL = new DevExpress.XtraReports.UI.XRLabel();
             this.lblTenBenhVien = new DevExpress.XtraReports.UI.XRLabel();
             this.xrShape1 = new DevExpress.XtraReports.UI.XRShape();
-            this.lblSTT = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblNgay = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -76,22 +76,24 @@
             this.PageHeader.HeightF = 171.1667F;
             this.PageHeader.Name = "PageHeader";
             // 
-            // lblNgay
+            // lblSTT
             // 
-            this.lblNgay.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblNgay.BorderWidth = 0F;
-            this.lblNgay.Dpi = 100F;
-            this.lblNgay.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 3.999996F);
-            this.lblNgay.Name = "lblNgay";
-            this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgay.SizeF = new System.Drawing.SizeF(144.9165F, 23F);
-            this.lblNgay.StylePriority.UseBorders = false;
-            this.lblNgay.StylePriority.UseBorderWidth = false;
-            this.lblNgay.StylePriority.UseFont = false;
-            this.lblNgay.StylePriority.UseTextAlignment = false;
-            this.lblNgay.Text = "21/05/2018 10:50 AM";
-            this.lblNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblSTT.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblSTT.BorderWidth = 2F;
+            this.lblSTT.Dpi = 100F;
+            this.lblSTT.Font = new System.Drawing.Font("Arial", 58F);
+            this.lblSTT.LocationFloat = new DevExpress.Utils.PointFloat(155.9166F, 7.791664F);
+            this.lblSTT.Name = "lblSTT";
+            this.lblSTT.SizeF = new System.Drawing.SizeF(109.0835F, 85.24999F);
+            this.lblSTT.StylePriority.UseBorders = false;
+            this.lblSTT.StylePriority.UseBorderWidth = false;
+            this.lblSTT.StylePriority.UseFont = false;
+            this.lblSTT.StylePriority.UsePadding = false;
+            this.lblSTT.StylePriority.UseTextAlignment = false;
+            this.lblSTT.Text = "12";
+            this.lblSTT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lblTenVLTL
             // 
@@ -131,24 +133,22 @@
             this.xrShape1.SizeF = new System.Drawing.SizeF(273F, 171.1667F);
             this.xrShape1.StylePriority.UseBorders = false;
             // 
-            // lblSTT
+            // lblNgay
             // 
-            this.lblSTT.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSTT.BorderWidth = 2F;
-            this.lblSTT.Dpi = 100F;
-            this.lblSTT.Font = new System.Drawing.Font("Arial", 58F);
-            this.lblSTT.LocationFloat = new DevExpress.Utils.PointFloat(155.9166F, 7.791664F);
-            this.lblSTT.Name = "lblSTT";
-            this.lblSTT.SizeF = new System.Drawing.SizeF(109.0835F, 85.24999F);
-            this.lblSTT.StylePriority.UseBorders = false;
-            this.lblSTT.StylePriority.UseBorderWidth = false;
-            this.lblSTT.StylePriority.UseFont = false;
-            this.lblSTT.StylePriority.UsePadding = false;
-            this.lblSTT.StylePriority.UseTextAlignment = false;
-            this.lblSTT.Text = "12";
-            this.lblSTT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblNgay.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.lblNgay.BorderWidth = 0F;
+            this.lblNgay.Dpi = 100F;
+            this.lblNgay.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNgay.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 3.999996F);
+            this.lblNgay.Name = "lblNgay";
+            this.lblNgay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblNgay.SizeF = new System.Drawing.SizeF(144.9165F, 23F);
+            this.lblNgay.StylePriority.UseBorders = false;
+            this.lblNgay.StylePriority.UseBorderWidth = false;
+            this.lblNgay.StylePriority.UseFont = false;
+            this.lblNgay.StylePriority.UseTextAlignment = false;
+            this.lblNgay.Text = "21/05/2018 10:50 AM";
+            this.lblNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ReportSTT
             // 
@@ -173,9 +173,9 @@
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRShape xrShape1;
-        public DevExpress.XtraReports.UI.XRLabel lblNgay;
         public DevExpress.XtraReports.UI.XRLabel lblTenVLTL;
         public DevExpress.XtraReports.UI.XRLabel lblTenBenhVien;
         public DevExpress.XtraReports.UI.XRLabel lblSTT;
+        public DevExpress.XtraReports.UI.XRLabel lblNgay;
     }
 }

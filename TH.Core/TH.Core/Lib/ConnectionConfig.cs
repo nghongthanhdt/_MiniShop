@@ -27,6 +27,14 @@ namespace TH.Core.Lib
             serializer.Serialize(writer, obj);
             writer.Close();            
         }
+        public static void SaveSqlObjectToXMLFile(object obj, string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(object));
+            TextWriter writer = new StreamWriter(path);
+            serializer.Serialize(writer, obj);
+            writer.Close();
+        }
+
 
         public static SqlConnectionConfig LoadSqlConnectionConfigXMLToObject(string path)
         {

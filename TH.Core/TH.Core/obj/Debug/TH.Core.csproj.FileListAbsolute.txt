@@ -92,7 +92,6 @@ D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\de\DevExpress.XtraLayout.v16.1.r
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\es\DevExpress.XtraLayout.v16.1.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ja\DevExpress.XtraLayout.v16.1.resources.dll
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\ru\DevExpress.XtraLayout.v16.1.resources.dll
-D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csprojResolveAssemblyReference.cache
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe.licenses
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Forms.FormDatabaseBackupManager.resources
 D:\_Working\_MiniShop\TH.Core\TH.Core\bin\Debug\DevExpress.XtraGrid.v16.1.dll

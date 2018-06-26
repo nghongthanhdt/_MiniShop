@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using TH.Core.Forms;
 
 namespace TH.InSTTVLTL
@@ -58,25 +60,59 @@ namespace TH.InSTTVLTL
                 var vltl = db.VLTL.Find(id);
                 vltl.SoHienTai++;
                 vltl.NgayIn = DateTime.Now;
-
-                ReportSTT rp = new ReportSTT();
-                rp.lblTenBenhVien.Text = TenBenhVien;
-                rp.lblTenVLTL.Text = vltl.TenVLTL;
-                rp.lblSTT.Text = vltl.SoHienTai.ToString();
-                rp.lblNgay.Text = vltl.NgayIn.ToString();
-
-                rp.ShowPrintMarginsWarning = false;
-                try
+                
+                if (TenMayIn == "XP-80C")
                 {
-                    using (ReportPrintTool printTool = new ReportPrintTool(rp))
+                    // máy in Xprinter
+                    ReportSTT_Xprinter rp = new ReportSTT_Xprinter();
+                    rp.lblTenBenhVien.Text = TenBenhVien;
+                    rp.lblTenVLTL.Text = vltl.TenVLTL;
+                    rp.lblSTT.Text = vltl.SoHienTai.ToString();
+                    rp.lblNgay.Text = vltl.NgayIn.ToString();
+
+                    rp.ShowPrintMarginsWarning = false;
+                    try
                     {
-                        printTool.PrinterSettings.PrinterName = TenMayIn;
-                        printTool.Print();
+                        using (ReportPrintTool printTool = new ReportPrintTool(rp))
+                        {
+                            printTool.PrinterSettings.PrinterName = TenMayIn;
+                            printTool.Print();
+                        }
+                    }
+                    catch
+                    {
+                        ThMessageBox.ShowError("Không thể kết nối máy in, vui lòng liên hệ quản trị.");
+                    }
+
+                }
+                else
+                {
+                    ReportSTT rp = new ReportSTT();
+                    rp.lblTenBenhVien.Text = TenBenhVien;
+                    rp.lblTenVLTL.Text = vltl.TenVLTL;
+                    rp.lblSTT.Text = vltl.SoHienTai.ToString();
+                    rp.lblNgay.Text = vltl.NgayIn.ToString();
+
+                    rp.ShowPrintMarginsWarning = false;
+                    try
+                    {
+                        using (ReportPrintTool printTool = new ReportPrintTool(rp))
+                        {
+                            printTool.PrinterSettings.PrinterName = TenMayIn;
+                            printTool.Print();
+                        }
+                    }
+                    catch
+                    {
+                        ThMessageBox.ShowError("Không thể kết nối máy in, vui lòng liên hệ quản trị.");
                     }
                 }
-                catch {
-                    ThMessageBox.ShowError("Không thể kết nối máy in, vui lòng liên hệ quản trị.");
-                }
+                
+                // máy in cũ
+                
+
+                
+                
                 
             }
             db.SaveChanges();
@@ -126,7 +162,12 @@ namespace TH.InSTTVLTL
         {
             TenBenhVien = db.ThamSo.Find("tenbenhvien").GiaTri;
             NgayHienTai = db.ThamSo.Find("ngayhientai").GiaTri;
-            TenMayIn = db.ThamSo.Find("tenmayin").GiaTri;
+            //TenMayIn = db.ThamSo.Find("tenmayin").GiaTri;
+
+            // load ten bv, ten may in
+
+            LoadMayInFromXMLFile("configMayIn.xml");
+
         }
 
         private void gcVLTL_DoubleClick(object sender, EventArgs e)
@@ -178,6 +219,25 @@ namespace TH.InSTTVLTL
             timerLamMoi.Stop();
             timerLamMoi.Start();
             loadgcVLTL();
+        }
+        public void LoadMayInFromXMLFile(string path)
+        {
+            try
+            {
+                MayIn mayIn = new MayIn();
+                XmlSerializer serializer = new XmlSerializer(typeof(MayIn));
+                TextReader reader = new StreamReader(path);
+                mayIn = (MayIn)serializer.Deserialize(reader);
+                reader.Close();
+                TenMayIn = mayIn.TenMayIn;
+                //MessageBox.Show("Tên máy in: " + TenMayIn);
+            }
+            catch
+            {
+                ThMessageBox.ShowError("Chưa cấu hình máy in");
+                //txtTenMayIn.Text = "<< lỗi cấu hình máy in >>";
+            }
+
         }
     }
 }

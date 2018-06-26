@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using TH.Core.Forms;
 
 
@@ -39,12 +41,13 @@ namespace TH.InSTTVLTL
             try
             {
                 txtTenBenhVien.Text = db.ThamSo.Find("tenbenhvien").GiaTri;
-                txtTenMayIn.Text = db.ThamSo.Find("tenmayin").GiaTri;
+                LoadMayInFromXMLFile("configMayIn.xml");    
             }
             catch (Exception ex)
             {
                 ThMessageBox.ShowSystemError(ex.Message);
             }
+
 
         }
 
@@ -150,9 +153,15 @@ namespace TH.InSTTVLTL
             {
                 ThamSo ts = db.ThamSo.Find("tenbenhvien");
                 ts.GiaTri = txtTenBenhVien.Text;
-                ThamSo ts2 = db.ThamSo.Find("tenmayin");
-                ts2.GiaTri = txtTenMayIn.Text;
+                //ThamSo ts2 = db.ThamSo.Find("tenmayin");
+                //ts2.GiaTri = txtTenMayIn.Text;
                 db.SaveChanges();
+
+                MayIn mayIn = new MayIn();
+                mayIn.TenMayIn = txtTenMayIn.Text;
+                
+                string path = "configMayIn.xml";
+                SaveMayInToXMLFile(mayIn, path);
                 ThMessageBox.Show("Lưu dữ liệu thành công");
             } catch (Exception ex)
             {
@@ -164,6 +173,31 @@ namespace TH.InSTTVLTL
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void SaveMayInToXMLFile(MayIn obj, string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(MayIn));
+            TextWriter writer = new StreamWriter(path);
+            serializer.Serialize(writer, obj);
+            writer.Close();
+        }
+        public void LoadMayInFromXMLFile(string path)
+        {
+            try
+            {
+                MayIn mayIn = new MayIn();
+                XmlSerializer serializer = new XmlSerializer(typeof(MayIn));
+                TextReader reader = new StreamReader(path);
+                mayIn = (MayIn)serializer.Deserialize(reader);
+                reader.Close();
+                txtTenMayIn.Text = mayIn.TenMayIn;
+            }
+            catch
+            {
+                ThMessageBox.ShowError("Lỗi cấu hình máy in");
+                txtTenMayIn.Text = "<< lỗi cấu hình máy in >>";
+            }
+            
         }
     }
 }

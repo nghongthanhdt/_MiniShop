@@ -36,6 +36,7 @@
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenVLTL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoHienTai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenVLTL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.txtTenMayIn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoHienTai = new System.Windows.Forms.TextBox();
-            this.colSoHienTai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,12 @@
             this.colTenVLTL.Visible = true;
             this.colTenVLTL.VisibleIndex = 1;
             this.colTenVLTL.Width = 607;
+            // 
+            // colSoHienTai
+            // 
+            this.colSoHienTai.Caption = "SoHienTai";
+            this.colSoHienTai.FieldName = "SoHienTai";
+            this.colSoHienTai.Name = "colSoHienTai";
             // 
             // label2
             // 
@@ -218,9 +224,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Tên bệnh viện:";
+            this.label4.Text = "Tên máy in:";
             // 
             // txtTenMayIn
             // 
@@ -246,12 +252,6 @@
             this.txtSoHienTai.Size = new System.Drawing.Size(123, 20);
             this.txtSoHienTai.TabIndex = 2;
             // 
-            // colSoHienTai
-            // 
-            this.colSoHienTai.Caption = "SoHienTai";
-            this.colSoHienTai.FieldName = "SoHienTai";
-            this.colSoHienTai.Name = "colSoHienTai";
-            // 
             // FormCauHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +276,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCauHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cấu hình phần mềm";
+            this.Text = "Cấu hình phần mềm [v18.06.26]";
             this.Load += new System.EventHandler(this.FormCauHinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).EndInit();

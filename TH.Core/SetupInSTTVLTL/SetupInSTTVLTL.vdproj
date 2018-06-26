@@ -1012,6 +1012,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D9E9A174F8E226661342E24D494486DE"
+        "OwnerKey" = "8:_5B14B50AF5BAD5DF9D807FE13A09670B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D9E9A174F8E226661342E24D494486DE"
         "OwnerKey" = "8:_435D0D305398B407593C2FF7D64B0E0E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1055,6 +1061,12 @@
         {
         "MsmKey" = "8:_E258537A5B1A33A2C0113D1906DCD5BC"
         "OwnerKey" = "8:_3B3A507C8FFFBF91DA772FB87A6A480A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E258537A5B1A33A2C0113D1906DCD5BC"
+        "OwnerKey" = "8:_5B14B50AF5BAD5DF9D807FE13A09670B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1139,6 +1151,12 @@
         {
         "MsmKey" = "8:_F710499D56F6054B3ED50B7A07209663"
         "OwnerKey" = "8:_862A0534D9600C56D5AF6703A7BA1EDA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F710499D56F6054B3ED50B7A07209663"
+        "OwnerKey" = "8:_5B14B50AF5BAD5DF9D807FE13A09670B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1325,12 +1343,6 @@
         {
         "MsmKey" = "8:_F710499D56F6054B3ED50B7A07209663"
         "OwnerKey" = "8:_AC78888213EEA2CB550680BE5C164A2D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F710499D56F6054B3ED50B7A07209663"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1573,6 +1585,12 @@
         "OwnerKey" = "8:_CE8A50D8B256F959A29B7A091FBE0360"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F710499D56F6054B3ED50B7A07209663"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -1630,6 +1648,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -2976,15 +3002,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InSTTVLTL"
-        "ProductCode" = "8:{E95A66CA-23BC-4046-97AC-F7A53CF7BA6D}"
-        "PackageCode" = "8:{F1FDF758-ED56-4804-94CC-58373FB2E230}"
+        "ProductCode" = "8:{AED371B6-592D-4159-B5AF-D04592ED1017}"
+        "PackageCode" = "8:{4912FBCB-6E73-4ED7-B876-334AEF0AE939}"
         "UpgradeCode" = "8:{FC59C9D5-A0C7-49CC-B3B0-7D47838E21B2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:THSofts"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

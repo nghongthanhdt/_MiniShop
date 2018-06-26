@@ -53,7 +53,7 @@
             this.gcVLTL.Location = new System.Drawing.Point(12, 66);
             this.gcVLTL.MainView = this.gvVLTL;
             this.gcVLTL.Name = "gcVLTL";
-            this.gcVLTL.Size = new System.Drawing.Size(708, 467);
+            this.gcVLTL.Size = new System.Drawing.Size(708, 539);
             this.gcVLTL.TabIndex = 0;
             this.gcVLTL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVLTL});
@@ -178,9 +178,9 @@
             this.btnLamMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnLamMoi.Appearance.Options.UseFont = true;
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.Location = new System.Drawing.Point(226, 33);
+            this.btnLamMoi.Location = new System.Drawing.Point(226, 12);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(102, 27);
+            this.btnLamMoi.Size = new System.Drawing.Size(88, 48);
             this.btnLamMoi.TabIndex = 1;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 545);
+            this.ClientSize = new System.Drawing.Size(732, 617);
             this.Controls.Add(this.btnCauHinh);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLamMoi);

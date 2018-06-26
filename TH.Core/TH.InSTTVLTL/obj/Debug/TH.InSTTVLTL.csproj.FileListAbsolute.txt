@@ -384,3 +384,4 @@ D:\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\es\DevExpress.Xpo.v16.1.resources.dl
 D:\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\ja\DevExpress.Xpo.v16.1.resources.dll
 D:\_MiniShop\TH.Core\TH.InSTTVLTL\bin\Debug\ru\DevExpress.Xpo.v16.1.resources.dll
 D:\_MiniShop\TH.Core\TH.InSTTVLTL\obj\Debug\TH.InSTTVLTL.ReportSTT.resources
+D:\_Working\_MiniShop\TH.Core\TH.InSTTVLTL\obj\Debug\TH.InSTTVLTL.ReportSTT_Xprinter.resources
