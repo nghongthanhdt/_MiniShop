@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using TH.Core.Forms;
 using Hotkeys;
+using Microsoft.Win32;
 
 namespace TH.InSTTKB
 {
@@ -32,11 +33,16 @@ namespace TH.InSTTKB
 
         private void HandleHotkey(string code)
         {
+
+            //            MessageBox.Show(code);
             string nut = "";
-            switch(code)
+            switch (code)
             {
                 case "6291456":
                     nut = "0";
+                    txtNutNhap.Focus();
+                    txtNutNhap.Text = nut;
+                    batSo(nut);
                     break;
                 case "6356992":
                     nut = "1";
@@ -69,13 +75,14 @@ namespace TH.InSTTKB
                     break;
 
             }
-            //MessageBox.Show("Hotkey pressed! " + nut);
+            ////MessageBox.Show("Hotkey pressed! " + nut);
             batSo(nut);
-            
+
         }
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == Hotkeys.Constants.WM_HOTKEY_MSG_ID)
+                //HandleHotkey(m.LParam.ToString());
                 HandleHotkey(m.LParam.ToString());
             base.WndProc(ref m);
         }
@@ -116,15 +123,18 @@ namespace TH.InSTTKB
             if (!ghk7.Register()) MessageBox.Show("Hotkey 7 failed to register!"); ;
             if (!ghk8.Register()) MessageBox.Show("Hotkey 8 failed to register!"); ;
             if (!ghk9.Register()) MessageBox.Show("Hotkey 9 failed to register!"); ;
-
+            setAutoStart();
         }
 
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
             FormCauHinh f = new FormCauHinh();
+            timerMain.Stop();
             f.ShowDialog();
-
+            timerMain.Start();
+            txtNutNhap.Focus();
             loadConfigSTT();
+           
             
         }
 
@@ -181,6 +191,8 @@ namespace TH.InSTTKB
 
             gcSTT.DataSource = dt;
 
+            timerMain.Interval = config.ThoiGianCho * 1000;
+
         }
         public static void SaveConfigToXMLFile(ConfigBatSoTT obj, string path)
         {
@@ -201,7 +213,7 @@ namespace TH.InSTTKB
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
-            
+            txtNutNhap.Focus();
         }
 
         private void lblTenBenhVien_Click(object sender, EventArgs e)
@@ -214,63 +226,74 @@ namespace TH.InSTTKB
         {
             switch (nut)
             {
-                case "0":                    
+                case "0":
+                    txtNutNhap.Focus();
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 1).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 1).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "1":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 2).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 2).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "2":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 3).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 3).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "3":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 4).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 4).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "4":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 5).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 5).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "5":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 6).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 6).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "6":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 7).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 7).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "7":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 8).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 8).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "8":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 9).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 9).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
                 case "9":                    
                     config = LoadXMLToConfigBatSoTT(_configPath);
                     config.listSTT.Where(x => x.Nut == 10).Last().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 10).Last().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
@@ -291,6 +314,9 @@ namespace TH.InSTTKB
         private void timerMain_Tick(object sender, EventArgs e)
         {
             hienThiGioHienTai();
+            txtNutNhap.Focus();
+            this.Activate();
+            this.WindowState = FormWindowState.Normal;
         }
         private void hienThiGioHienTai()
         {
@@ -321,6 +347,32 @@ namespace TH.InSTTKB
             if (!ghk9.Unregiser())
                 MessageBox.Show("Hotkey failed to unregister!");
         }
-    
+
+        private void txtNutNhap_TextChanged(object sender, EventArgs e)
+        {
+            batSo(txtNutNhap.Text);
+            txtNutNhap.Text = "";
+        }
+
+        private void setAutoStart()
+        {
+            string StartupKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+            string StartupValue = "TH.InSTTKB";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(StartupKey, true);
+            key.SetValue(StartupValue, Application.ExecutablePath.ToString());
+        }
+        private void unsetAutoStart()
+        {
+            // chưa sử dụng
+            try
+            {
+                string StartupKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+                string StartupValue = "TH.InSTTKB";
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(StartupKey, true);
+                key.DeleteValue(StartupValue);
+            }
+            catch { }
+
+        }
     }
 }

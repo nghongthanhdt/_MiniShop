@@ -484,6 +484,7 @@
             this.txtThoiGianCho.Name = "txtThoiGianCho";
             this.txtThoiGianCho.Size = new System.Drawing.Size(53, 21);
             this.txtThoiGianCho.TabIndex = 21;
+            this.txtThoiGianCho.Text = "1";
             this.txtThoiGianCho.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormCauHinh

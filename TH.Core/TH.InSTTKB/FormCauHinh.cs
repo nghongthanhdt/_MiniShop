@@ -66,7 +66,7 @@ namespace TH.InSTTKB
         {
             txtTenBenhVien.Enabled = true;
             txtTenMayIn.Enabled = true;
-            txtThoiGianCho.Enabled = true;
+            //txtThoiGianCho.Enabled = true;
             txtNut1.Enabled = true;
             txtNut2.Enabled = true;
             txtNut3.Enabled = true;
