@@ -40,9 +40,9 @@ namespace TH.InSTTKB
             {
                 case "6291456":
                     nut = "0";
-                    txtNutNhap.Focus();
-                    txtNutNhap.Text = nut;
-                    batSo(nut);
+                    //txtNutNhap.Focus();
+                    //txtNutNhap.Text = nut;
+                    //batSo(nut);
                     break;
                 case "6356992":
                     nut = "1";
@@ -111,18 +111,16 @@ namespace TH.InSTTKB
         private void FormMain_Load(object sender, EventArgs e)
         {
             loadConfigSTT();
-            
-
-            if (!ghk0.Register()) MessageBox.Show("Hotkey 0 failed to register!"); ;
-            if (!ghk1.Register()) MessageBox.Show("Hotkey 1 failed to register!"); ;
-            if (!ghk2.Register()) MessageBox.Show("Hotkey 2 failed to register!"); ;
-            if (!ghk3.Register()) MessageBox.Show("Hotkey 3 failed to register!"); ;
-            if (!ghk4.Register()) MessageBox.Show("Hotkey 4 failed to register!"); ;
-            if (!ghk5.Register()) MessageBox.Show("Hotkey 5 failed to register!"); ;
-            if (!ghk6.Register()) MessageBox.Show("Hotkey 6 failed to register!"); ;
-            if (!ghk7.Register()) MessageBox.Show("Hotkey 7 failed to register!"); ;
-            if (!ghk8.Register()) MessageBox.Show("Hotkey 8 failed to register!"); ;
-            if (!ghk9.Register()) MessageBox.Show("Hotkey 9 failed to register!"); ;
+            if (!ghk0.Register()) ThMessageBox.ShowSystemError("Lỗi các nút bấm, vui lòng liên hệ quản trị."); 
+            ghk1.Register(); 
+            ghk2.Register(); 
+            ghk3.Register(); 
+            ghk4.Register(); 
+            ghk5.Register(); 
+            ghk6.Register(); 
+            ghk7.Register(); 
+            ghk8.Register(); 
+            ghk9.Register(); 
             setAutoStart();
         }
 
@@ -140,8 +138,10 @@ namespace TH.InSTTKB
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
+            timerMain.Stop();
             if (ThMessageBox.ShowConfirm("Bạn thật sự muốn thoát ?"))
-            this.Close();
+                this.Close();
+            else timerMain.Start();
         }
 
         private void btnThuNho_Click(object sender, EventArgs e)
@@ -153,21 +153,32 @@ namespace TH.InSTTKB
             foreach (var stt in config.listSTT)
             {
                 stt.SoHienTai = 0;
-                
+                stt.NgayGioIn = DateTime.MinValue;               
             }
-            config.ThoiDiemReset = config.ThoiDiemReset.AddHours(12);
+            config.ThoiDiemReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddHours(12);
             SaveConfigToXMLFile(config,_configPath);
-            MessageBox.Show(config.ThoiDiemReset.ToString());
+            //MessageBox.Show(config.ThoiDiemReset.ToString());
         }
         private void loadConfigSTT()
         {
+            
             config = LoadXMLToConfigBatSoTT(_configPath);
+            
+            
+            if (config.ThoiDiemReset < DateTime.Now)
+            {
+                resetSoHienTai();                                
+            }
             if (config.ThoiDiemReset < DateTime.Now)
             {
                 resetSoHienTai();
             }
 
             lblTenBenhVien.Text = config.TenBenhVien;
+            if (lblTenBenhVien.Text == "")
+            {
+                lblTenBenhVien.Text = "[Chưa cấu hình]";
+            }
             //statusThongBao.Text = "[" + config.ThoiDiemReset.ToString("dd/MM/yyyy") + "] - Mời bắt số ...";
 
             DataTable dt = new DataTable();
@@ -191,12 +202,13 @@ namespace TH.InSTTKB
 
             gcSTT.DataSource = dt;
 
-            timerMain.Interval = config.ThoiGianCho * 1000;
+            timerMain.Interval = 1000;
 
         }
         public static void SaveConfigToXMLFile(ConfigBatSoTT obj, string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ConfigBatSoTT));
+
             TextWriter writer = new StreamWriter(path);
             serializer.Serialize(writer, obj);
             writer.Close();
@@ -227,10 +239,10 @@ namespace TH.InSTTKB
             switch (nut)
             {
                 case "0":
-                    txtNutNhap.Focus();
+                    //txtNutNhap.Focus();
                     config = LoadXMLToConfigBatSoTT(_configPath);
-                    config.listSTT.Where(x => x.Nut == 1).Last().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 1).Last().NgayGioIn = DateTime.Now;
+                    config.listSTT.Where(x => x.Nut == 1).First().SoHienTai++;
+                    config.listSTT.Where(x => x.Nut == 1).First().NgayGioIn = DateTime.Now;
                     SaveConfigToXMLFile(config, _configPath);
                     loadConfigSTT();
                     break;
@@ -326,26 +338,16 @@ namespace TH.InSTTKB
         
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!ghk0.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk1.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk2.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk3.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk4.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk5.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk6.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk7.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk8.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
-            if (!ghk9.Unregiser())
-                MessageBox.Show("Hotkey failed to unregister!");
+            ghk0.Unregiser();
+            ghk1.Unregiser();
+            ghk2.Unregiser();
+            ghk3.Unregiser();
+            ghk4.Unregiser();
+            ghk5.Unregiser();
+            ghk6.Unregiser();
+            ghk7.Unregiser();
+            ghk8.Unregiser();
+            ghk9.Unregiser();                
         }
 
         private void txtNutNhap_TextChanged(object sender, EventArgs e)

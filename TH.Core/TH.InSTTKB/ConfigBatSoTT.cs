@@ -25,18 +25,18 @@ namespace TH.InSTTKB
             TenBenhVien = "";
             TenMayIn = "";
             ThoiDiemReset = DateTime.MinValue;
-            
+            ThoiGianCho = 1;
             listSTT = new List<STT>();
             STT stt;
-            for (int i = 1; i<=10; i++)
-            {
-                stt = new STT();
-                stt.Nut = i;
-                stt.TenNut = "";
-                stt.SoHienTai = 0;
-                stt.NgayGioIn = DateTime.MinValue;
-                listSTT.Add(stt);                    
-            }            
+            //for (int i = 1; i<=10; i++)
+            //{
+            //    stt = new STT();
+            //    stt.Nut = i;
+            //    stt.TenNut = "";
+            //    stt.SoHienTai = 0;
+            //    stt.NgayGioIn = DateTime.MinValue;
+            //    listSTT.Add(stt);                    
+            //}            
         }
     }
 

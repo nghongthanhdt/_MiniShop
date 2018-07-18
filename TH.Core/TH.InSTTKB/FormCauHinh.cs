@@ -111,28 +111,33 @@ namespace TH.InSTTKB
             config = LoadXMLToConfigBatSoTT(_configPath);
             txtTenBenhVien.Text = config.TenBenhVien;
             txtTenMayIn.Text = config.TenMayIn;
-            txtThoiGianCho.Text = config.ThoiGianCho.ToString();
-            txtNut1.Text = config.listSTT.Where(x => x.Nut == 1).Last().TenNut;
-            txtNut2.Text = config.listSTT.Where(x => x.Nut == 2).Last().TenNut;
-            txtNut3.Text = config.listSTT.Where(x => x.Nut == 3).Last().TenNut;
-            txtNut4.Text = config.listSTT.Where(x => x.Nut == 4).Last().TenNut;
-            txtNut5.Text = config.listSTT.Where(x => x.Nut == 5).Last().TenNut;
-            txtNut6.Text = config.listSTT.Where(x => x.Nut == 6).Last().TenNut;
-            txtNut7.Text = config.listSTT.Where(x => x.Nut == 7).Last().TenNut;
-            txtNut8.Text = config.listSTT.Where(x => x.Nut == 8).Last().TenNut;
-            txtNut9.Text = config.listSTT.Where(x => x.Nut == 9).Last().TenNut;
-            txtNut10.Text = config.listSTT.Where(x => x.Nut == 10).Last().TenNut;
+            txtThoiGianCho.Text = "1";
+            try
+            {
+                txtNut1.Text = config.listSTT.Where(x => x.Nut == 1).First().TenNut;
+                txtNut2.Text = config.listSTT.Where(x => x.Nut == 2).First().TenNut;
+                txtNut3.Text = config.listSTT.Where(x => x.Nut == 3).First().TenNut;
+                txtNut4.Text = config.listSTT.Where(x => x.Nut == 4).First().TenNut;
+                txtNut5.Text = config.listSTT.Where(x => x.Nut == 5).First().TenNut;
+                txtNut6.Text = config.listSTT.Where(x => x.Nut == 6).First().TenNut;
+                txtNut7.Text = config.listSTT.Where(x => x.Nut == 7).First().TenNut;
+                txtNut8.Text = config.listSTT.Where(x => x.Nut == 8).First().TenNut;
+                txtNut9.Text = config.listSTT.Where(x => x.Nut == 9).First().TenNut;
+                txtNut10.Text = config.listSTT.Where(x => x.Nut == 10).First().TenNut;
 
-            txtSoHienTai_Nut1.Text = config.listSTT.Where(x => x.Nut == 1).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut2.Text = config.listSTT.Where(x => x.Nut == 2).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut3.Text = config.listSTT.Where(x => x.Nut == 3).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut4.Text = config.listSTT.Where(x => x.Nut == 4).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut5.Text = config.listSTT.Where(x => x.Nut == 5).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut6.Text = config.listSTT.Where(x => x.Nut == 6).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut7.Text = config.listSTT.Where(x => x.Nut == 7).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut8.Text = config.listSTT.Where(x => x.Nut == 8).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut9.Text = config.listSTT.Where(x => x.Nut == 9).Last().SoHienTai.ToString();
-            txtSoHienTai_Nut10.Text = config.listSTT.Where(x => x.Nut == 10).Last().SoHienTai.ToString();
+                txtSoHienTai_Nut1.Text = config.listSTT.Where(x => x.Nut == 1).First().SoHienTai.ToString();
+                txtSoHienTai_Nut2.Text = config.listSTT.Where(x => x.Nut == 2).First().SoHienTai.ToString();
+                txtSoHienTai_Nut3.Text = config.listSTT.Where(x => x.Nut == 3).First().SoHienTai.ToString();
+                txtSoHienTai_Nut4.Text = config.listSTT.Where(x => x.Nut == 4).First().SoHienTai.ToString();
+                txtSoHienTai_Nut5.Text = config.listSTT.Where(x => x.Nut == 5).First().SoHienTai.ToString();
+                txtSoHienTai_Nut6.Text = config.listSTT.Where(x => x.Nut == 6).First().SoHienTai.ToString();
+                txtSoHienTai_Nut7.Text = config.listSTT.Where(x => x.Nut == 7).First().SoHienTai.ToString();
+                txtSoHienTai_Nut8.Text = config.listSTT.Where(x => x.Nut == 8).First().SoHienTai.ToString();
+                txtSoHienTai_Nut9.Text = config.listSTT.Where(x => x.Nut == 9).First().SoHienTai.ToString();
+                txtSoHienTai_Nut10.Text = config.listSTT.Where(x => x.Nut == 10).First().SoHienTai.ToString();
+            }
+            catch { }
+            
         }
         private void saveConfig()
         {

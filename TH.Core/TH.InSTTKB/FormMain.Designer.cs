@@ -62,13 +62,17 @@
             this.gcSTT.Location = new System.Drawing.Point(12, 84);
             this.gcSTT.MainView = this.gvSTT;
             this.gcSTT.Name = "gcSTT";
-            this.gcSTT.Size = new System.Drawing.Size(691, 236);
+            this.gcSTT.Size = new System.Drawing.Size(691, 288);
             this.gcSTT.TabIndex = 1;
             this.gcSTT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvSTT});
             // 
             // gvSTT
             // 
+            this.gvSTT.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gvSTT.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvSTT.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gvSTT.Appearance.Row.Options.UseFont = true;
             this.gvSTT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colNutBam,
             this.colLoaiKham,
@@ -93,7 +97,7 @@
             // 
             // colLoaiKham
             // 
-            this.colLoaiKham.Caption = "Loại khám";
+            this.colLoaiKham.Caption = "Khám";
             this.colLoaiKham.FieldName = "TenNut";
             this.colLoaiKham.Name = "colLoaiKham";
             this.colLoaiKham.Visible = true;
@@ -111,7 +115,7 @@
             // 
             // colNgayGioIn
             // 
-            this.colNgayGioIn.Caption = "Ngày giờ in";
+            this.colNgayGioIn.Caption = "Ngày giờ";
             this.colNgayGioIn.FieldName = "NgayGioIn";
             this.colNgayGioIn.Name = "colNgayGioIn";
             this.colNgayGioIn.Visible = true;
@@ -130,10 +134,13 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(627, 49);
+            this.btnThoat.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnThoat.Location = new System.Drawing.Point(587, 12);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(76, 29);
+            this.btnThoat.Size = new System.Drawing.Size(116, 66);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -165,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 332);
+            this.ClientSize = new System.Drawing.Size(715, 384);
             this.ControlBox = false;
             this.Controls.Add(this.txtNutNhap);
             this.Controls.Add(this.txtThoiGian);
