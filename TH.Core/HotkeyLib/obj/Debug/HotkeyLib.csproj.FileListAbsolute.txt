@@ -3,3 +3,8 @@ C:\Users\Administrator\Desktop\Hotkeys\Hotkeys\HotkeyLib\bin\Debug\HotkeyLib.pdb
 C:\Users\Administrator\Desktop\Hotkeys\Hotkeys\HotkeyLib\obj\Debug\HotkeyLib.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\Hotkeys\Hotkeys\HotkeyLib\obj\Debug\HotkeyLib.dll
 C:\Users\Administrator\Desktop\Hotkeys\Hotkeys\HotkeyLib\obj\Debug\HotkeyLib.pdb
+D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\bin\Debug\HotkeyLib.dll
+D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\bin\Debug\HotkeyLib.pdb
+D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.csprojResolveAssemblyReference.cache
+D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.dll
+D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.pdb

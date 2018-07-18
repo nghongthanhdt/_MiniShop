@@ -55,7 +55,6 @@
             this.lblTenBenhVien.Size = new System.Drawing.Size(463, 23);
             this.lblTenBenhVien.TabIndex = 0;
             this.lblTenBenhVien.Text = "BỆNH VIỆN PHỤC HỒI CHỨC NĂNG ĐỒNG THÁP";
-            this.lblTenBenhVien.Click += new System.EventHandler(this.lblTenBenhVien_Click);
             // 
             // gcSTT
             // 
@@ -186,7 +185,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Shown += new System.EventHandler(this.FormMain_Shown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormMain_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.gcSTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTT)).EndInit();
             this.ResumeLayout(false);

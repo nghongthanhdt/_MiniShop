@@ -17,7 +17,7 @@ namespace TH.InSTTKB
     public partial class FormCauHinh : DevExpress.XtraEditors.XtraForm
     {
         string _configPath = "configSTT.xml";
-        DateTime _configDateTime;
+        DateTime ThoiDiemReset;
         public FormCauHinh()
         {
             InitializeComponent();
@@ -112,6 +112,7 @@ namespace TH.InSTTKB
             txtTenBenhVien.Text = config.TenBenhVien;
             txtTenMayIn.Text = config.TenMayIn;
             txtThoiGianCho.Text = "1";
+            ThoiDiemReset = config.ThoiDiemReset;
             try
             {
                 txtNut1.Text = config.listSTT.Where(x => x.Nut == 1).First().TenNut;
@@ -144,27 +145,15 @@ namespace TH.InSTTKB
             try
             {
 
-                try
-                {                    
-                    if (int.Parse(txtThoiGianCho.Text) < 1)
-                    {
-                        MessageBox.Show("Thời gian chờ ít nhất 1 giây, vui lòng nhập lại");
-                        return;
-                    }
-                } catch
-                {
-                    MessageBox.Show("Sai thời gian chờ, vui lòng kiểm tra lại");
-                    return;
-                }
+                
 
                 ConfigBatSoTT config = new ConfigBatSoTT();
                 config.TenBenhVien = txtTenBenhVien.Text;
                 config.TenMayIn = txtTenMayIn.Text;
                 config.ThoiGianCho = int.Parse(txtThoiGianCho.Text);
-                config.ThoiDiemReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddHours(12);
-                
+                config.ThoiDiemReset = ThoiDiemReset;
 
-                
+
                 List<STT> listSTT = new List<STT>();
                 STT stt;
                 //

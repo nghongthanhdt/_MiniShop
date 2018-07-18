@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ConfigBatSoTT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TenBenhVien>gfh</TenBenhVien>
-  <TenMayIn>sdfsdf</TenMayIn>
-  <ThoiDiemReset>2018-07-18T12:00:00</ThoiDiemReset>
+  <TenBenhVien>BỆNH VIỆN PHỤC HỒI CHỨC NĂNG</TenBenhVien>
+  <TenMayIn>POS8080</TenMayIn>
+  <ThoiDiemReset>2018-07-19T00:00:00</ThoiDiemReset>
   <listSTT>
     <STT>
       <Nut>1</Nut>
-      <TenNut>asd</TenNut>
-      <SoHienTai>0</SoHienTai>
+      <TenNut>vgfg</TenNut>
+      <SoHienTai>29</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>2</Nut>
-      <TenNut>asd</TenNut>
-      <SoHienTai>0</SoHienTai>
-      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+      <TenNut>Khám không BHYT</TenNut>
+      <SoHienTai>125</SoHienTai>
+      <NgayGioIn>2018-07-18T21:38:28.8544902+07:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>3</Nut>
-      <TenNut>asdasd</TenNut>
-      <SoHienTai>0</SoHienTai>
+      <TenNut>Khám ưu tiên</TenNut>
+      <SoHienTai>50</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>4</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>42</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>5</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>65</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>6</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>48</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>7</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>43</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>8</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>23</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>9</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>29</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
     <STT>
       <Nut>10</Nut>
-      <TenNut />
-      <SoHienTai>0</SoHienTai>
+      <TenNut>sdf</TenNut>
+      <SoHienTai>24</SoHienTai>
       <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
     </STT>
   </listSTT>
