@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.gcVLTL = new DevExpress.XtraGrid.GridControl();
             this.gvVLTL = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -39,7 +38,7 @@
             this.btnInSo = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnCauHinh = new DevExpress.XtraEditors.SimpleButton();
-            this.timerLamMoi = new System.Windows.Forms.Timer(this.components);
+            this.timerLamMoi = new System.Windows.Forms.Timer();
             this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcVLTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVLTL)).BeginInit();

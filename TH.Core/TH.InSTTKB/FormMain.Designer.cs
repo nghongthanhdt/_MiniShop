@@ -42,6 +42,8 @@
             this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.txtThoiGian = new System.Windows.Forms.TextBox();
             this.txtNutNhap = new System.Windows.Forms.TextBox();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gcSTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTT)).BeginInit();
             this.SuspendLayout();
@@ -167,21 +169,37 @@
             this.txtNutNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNutNhap.TextChanged += new System.EventHandler(this.txtNutNhap_TextChanged);
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(476, 377);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Copyright by Nguyễn Hồng Thanh [v18.07.19]";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 384);
+            this.ClientSize = new System.Drawing.Size(715, 397);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNutNhap);
             this.Controls.Add(this.txtThoiGian);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnCauHinh);
             this.Controls.Add(this.gcSTT);
             this.Controls.Add(this.lblTenBenhVien);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm bắt số thứ tự";
+            this.Text = "Phần mềm bắt số thứ tự khám bệnh";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Shown += new System.EventHandler(this.FormMain_Shown);
@@ -206,6 +224,8 @@
         private System.Windows.Forms.Timer timerMain;
         private System.Windows.Forms.TextBox txtThoiGian;
         private System.Windows.Forms.TextBox txtNutNhap;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

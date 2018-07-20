@@ -242,6 +242,5 @@ D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.exe
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.pdb
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.FormMain.resources
 D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Forms.FormConnectionConfig.resources
-D:\_Working\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.csprojResolveAssemblyReference.cache
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.FormMain.resources
 D:\_MiniShop\_MiniShop\TH.Core\TH.Core\obj\Debug\TH.Core.Forms.FormConnectionConfig.resources

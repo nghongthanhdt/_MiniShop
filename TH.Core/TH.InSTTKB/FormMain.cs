@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using TH.Core.Forms;
 using Hotkeys;
 using Microsoft.Win32;
+using DevExpress.XtraReports.UI;
 
 namespace TH.InSTTKB
 {
@@ -201,69 +202,127 @@ namespace TH.InSTTKB
         }
         private void batSo(string nut)
         {
+            
             switch (nut)
             {
                 case "0":
-                    //txtNutNhap.Focus();
-
-                    
-                    config.listSTT.Where(x => x.Nut == 1).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 1).First().NgayGioIn = DateTime.Now;
-                    
+                    if (config.listSTT.Where(x => x.Nut == 1 && x.TenNut != "").ToList().Any())
+                    {                        
+                        config.listSTT.Where(x => x.Nut == 1 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 1 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 1 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 1 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }                    
                     break;
                 case "1":
-                    
-                    config.listSTT.Where(x => x.Nut == 2).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 2).First().NgayGioIn = DateTime.Now;
-                    
+                    if (config.listSTT.Where(x => x.Nut == 2 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 2 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 2 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 2 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 2 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "2":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 3).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 3).First().NgayGioIn = DateTime.Now;
-                    
+                case "2":
+
+                    if (config.listSTT.Where(x => x.Nut == 3 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 3 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 3 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 3 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 3 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
+
                     break;
-                case "3":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 4).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 4).First().NgayGioIn = DateTime.Now;
-                    
+                case "3":
+
+                    if (config.listSTT.Where(x => x.Nut == 4 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 4 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 4 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 4 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 4 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "4":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 5).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 5).First().NgayGioIn = DateTime.Now;
-                    
+                case "4":
+
+                    if (config.listSTT.Where(x => x.Nut == 5 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 5 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 5 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 5 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 5 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "5":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 6).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 6).First().NgayGioIn = DateTime.Now;
-                    
+                case "5":
+
+                    if (config.listSTT.Where(x => x.Nut == 6 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 6 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 6 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 6 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 6 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "6":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 7).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 7).First().NgayGioIn = DateTime.Now;
-                    
+                case "6":
+
+                    if (config.listSTT.Where(x => x.Nut == 7 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 7 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 7 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 7 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 7 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "7":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 8).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 8).First().NgayGioIn = DateTime.Now;
-                    
+                case "7":
+
+                    if (config.listSTT.Where(x => x.Nut == 8 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 8 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 8 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 8 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 8 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "8":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 9).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 9).First().NgayGioIn = DateTime.Now;
-                    
+                case "8":
+
+                    if (config.listSTT.Where(x => x.Nut == 9 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 9 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 9 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 9 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 9 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
-                case "9":                    
-                    
-                    config.listSTT.Where(x => x.Nut == 10).First().SoHienTai++;
-                    config.listSTT.Where(x => x.Nut == 10).First().NgayGioIn = DateTime.Now;
-                    
+                case "9":
+
+                    if (config.listSTT.Where(x => x.Nut == 10 && x.TenNut != "").ToList().Any())
+                    {
+                        config.listSTT.Where(x => x.Nut == 10 && x.TenNut != "").First().SoHienTai++;
+                        config.listSTT.Where(x => x.Nut == 10 && x.TenNut != "").First().NgayGioIn = DateTime.Now;
+                        if (!inSo(config, (config.listSTT.Where(x => x.Nut == 10 && x.TenNut != "").First().Nut).ToString()))
+                        {
+                            config.listSTT.Where(x => x.Nut == 10 && x.TenNut != "").First().SoHienTai--;
+                        }
+                    }
                     break;
                 default:                    
                     break;
@@ -271,6 +330,44 @@ namespace TH.InSTTKB
             }
             SaveConfigToXMLFile(config, _configPath);
             loadConfigSTT();
+
+        }
+        private bool inSo(ConfigBatSoTT config,string nut)
+        {
+            ReportSTT report = new ReportSTT();
+            try
+            {
+                int _nut = int.Parse(nut);
+                STT stt = config.listSTT.Where(x => x.Nut == _nut).First();
+
+
+                report.txtTenBenhVien.Text = config.TenBenhVien;                
+                report.txtLoaiKham.Text = stt.TenNut;
+                report.txtNgay.Text = stt.NgayGioIn.ToString();
+                report.txtSTT.Text = stt.SoHienTai.ToString();
+                report.PrinterName = config.TenMayIn;
+                report.ShowPrintMarginsWarning = false;
+            } catch (Exception ex)
+            {
+                ThMessageBox.ShowSystemError("Lỗi hệ thống: " + ex.Message);
+                return false;
+            }
+            
+
+            try
+            {
+                using (ReportPrintTool printTool = new ReportPrintTool(report))
+                {
+                    printTool.PrinterSettings.PrinterName = report.PrinterName;
+                    printTool.Print();
+                    return true;
+                }
+            }
+            catch
+            {
+                ThMessageBox.ShowError("Không thể kết nối máy in, vui lòng liên hệ quản trị.");
+                return false;
+            }
 
         }
         private void timerMain_Tick(object sender, EventArgs e)

@@ -8,3 +8,7 @@ D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\bin\Debug\HotkeyLib.pdb
 D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.csprojResolveAssemblyReference.cache
 D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.dll
 D:\_MiniShop\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.pdb
+D:\_Working\_MiniShop\TH.Core\HotkeyLib\bin\Debug\HotkeyLib.dll
+D:\_Working\_MiniShop\TH.Core\HotkeyLib\bin\Debug\HotkeyLib.pdb
+D:\_Working\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.dll
+D:\_Working\_MiniShop\TH.Core\HotkeyLib\obj\Debug\HotkeyLib.pdb

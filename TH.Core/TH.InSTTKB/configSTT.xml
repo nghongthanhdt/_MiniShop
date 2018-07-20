@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigBatSoTT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TenBenhVien>BỆNH VIỆN PHỤC HỒI CHỨC NĂNG</TenBenhVien>
+  <TenMayIn>POS8080</TenMayIn>
+  <ThoiDiemReset>2018-07-19T12:00:00</ThoiDiemReset>
+  <listSTT>
+    <STT>
+      <Nut>1</Nut>
+      <TenNut>Khám ưu tiên</TenNut>
+      <SoHienTai>13</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>2</Nut>
+      <TenNut>Khám BHYT</TenNut>
+      <SoHienTai>19</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>3</Nut>
+      <TenNut>Khám không BHYT</TenNut>
+      <SoHienTai>15</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>4</Nut>
+      <TenNut />
+      <SoHienTai>4</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>5</Nut>
+      <TenNut />
+      <SoHienTai>12</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>6</Nut>
+      <TenNut />
+      <SoHienTai>6</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>7</Nut>
+      <TenNut />
+      <SoHienTai>6</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>8</Nut>
+      <TenNut />
+      <SoHienTai>3</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>9</Nut>
+      <TenNut />
+      <SoHienTai>4</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+    <STT>
+      <Nut>10</Nut>
+      <TenNut />
+      <SoHienTai>5</SoHienTai>
+      <NgayGioIn>0001-01-01T00:00:00</NgayGioIn>
+    </STT>
+  </listSTT>
+  <ThoiGianCho>1</ThoiGianCho>
+</ConfigBatSoTT>
