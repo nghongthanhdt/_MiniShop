@@ -118,7 +118,11 @@ namespace DHG.Tools.Forms
                                         when khambenh.dakham = 3 then 'Cấp toa'
                                         when khambenh.dakham = 4 then 'Đang chỉnh'                                        
                                         when khambenh.dakham = 6 then 'Chuyển viện'
-                                    end as xutri
+                                    end as xutri,
+                                    thuchi.dain as dainksk,
+                                    thuchi.tongtien as tongtienksk,
+
+                                    dangky.madt as maloaikham
                                     from current.psdangky as dangky
                                     left join current.khambenh as khambenh on dangky.makb = khambenh.makb
                                     left join current.dmbenhvien as benhvien on dangky.mabvdk = benhvien.mabv
@@ -129,9 +133,13 @@ namespace DHG.Tools.Forms
                                     left join current.dmdonvi as donvi on bnnoitru.madv = donvi.madv
                                     left join current.chuyenvien as chuyenvien on khambenh.makb = chuyenvien.makb
                                     left join current.dmbenhvien as benhvienchuyenvien on chuyenvien.mabv = benhvienchuyenvien.mabv
-                                    where dangky.xoa = 0
+                                    left join current.thuchi as thuchi on dangky.makb = thuchi.makb
+
+                                    where dangky.xoa = 0                                    
+                                    and khambenh.mabn = '" + mabn+@"' 
                                     
-                                    and khambenh.mabn = '" + mabn+@"' order by thangkt desc, makb desc   
+                                    order by thangkt desc, makb desc   
+
                                 ";
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
                 adapter.Fill(dt);
@@ -152,7 +160,7 @@ namespace DHG.Tools.Forms
                 string maBenhNhan = gvBenhNhan.GetFocusedRowCellValue("mabn").ToString();
                 txtMaBN.Text = maBenhNhan;
                 txtHoTen.Text = gvBenhNhan.GetFocusedRowCellValue("hoten").ToString();
-                txtNgaySinh.Text = gvBenhNhan.GetFocusedRowCellValue("ngaysinh").ToString();
+                txtNgaySinh.Text = DateTime.Parse(gvBenhNhan.GetFocusedRowCellValue("ngaysinh").ToString()).ToShortDateString();
                 txtGioiTinh.Text = gvBenhNhan.GetFocusedRowCellValue("gioitinh").ToString();
                 txtMaTheBHYT.Text = gvBenhNhan.GetFocusedRowCellValue("mathe").ToString();
                 txtMaNoiDK.Text = gvBenhNhan.GetFocusedRowCellValue("mabvdk").ToString();
@@ -183,6 +191,32 @@ namespace DHG.Tools.Forms
         private void loadTextBoxLuotKham()
         {
             txtMaKB.Text = gvLuotKham.GetFocusedRowCellValue("makb").ToString();
+
+            if (gvLuotKham.GetFocusedRowCellValue("maloaikham").ToString() == "08")
+            {
+                // khám sức khỏe 
+                txtSoTienKSK.Text = gvLuotKham.GetFocusedRowCellValue("tongtienksk").ToString();
+                string dainksk = gvLuotKham.GetFocusedRowCellValue("dainksk").ToString();
+                if (dainksk == "1")
+                {
+                    checkboxDaThuTienKSK.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    checkboxDaThuTienKSK.CheckState = CheckState.Unchecked;
+                }
+                btnChiTietTienKSK.Enabled = true;
+                
+                
+            } else
+            {
+                txtSoTienKSK.Text = "";
+                checkboxDaThuTienKSK.CheckState = CheckState.Unchecked;
+                btnChiTietTienKSK.Enabled = false;
+                
+            }
+
+
             txtMaPhong.Text = gvLuotKham.GetFocusedRowCellValue("maphong").ToString();
             txtNgayKB.Text = gvLuotKham.GetFocusedRowCellValue("ngaykcb").ToString();
             if (txtMaTheBHYT.Text != "")
@@ -231,6 +265,8 @@ namespace DHG.Tools.Forms
             txtMaBenhVienChuyenVien.Text = gvLuotKham.GetFocusedRowCellValue("mabvcv").ToString();
             txtTenBenhVienChuyenVien.Text = gvLuotKham.GetFocusedRowCellValue("tenbvcv").ToString();
 
+            
+
         }
         private void clearTextBoxLuotKham()
         {
@@ -259,5 +295,16 @@ namespace DHG.Tools.Forms
         {
             loadTextBoxLuotKham();
         }
+
+        private void btnChiTietTienKSK_Click(object sender, EventArgs e)
+        {
+            FormChiTietKhamSucKhoe f = new FormChiTietKhamSucKhoe();
+            f.makb = txtMaKB.Text;
+            f.connection = connection;
+            f.ShowDialog();
+        }
+
+
+        
     }
 }
